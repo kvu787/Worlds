@@ -1,0 +1,13 @@
+[gd_scene load_steps=5 format=3 uid="uid://cwnmnrowfvxkg"]
+
+[ext_resource type="PackedScene" uid="uid://d2k4wlomk51u6" path="res://GLB/WedgeCar.glb" id="1_sfun1"]
+[ext_resource type="Material" uid="uid://b2vt37e3yypwt" path="res://Materials/WedgeCar/Palette1/Body.tres" id="3_o4a0l"]
+[ext_resource type="Material" uid="uid://2e86xnjf7al" path="res://Materials/WedgeCar/Palette1/Cabin.tres" id="4_yfntx"]
+[ext_resource type="Material" uid="uid://bwfymxncj0ub5" path="res://Materials/WedgeCar/Palette1/Wheels.tres" id="5_fnmk3"]
+
+[node name="WedgeCar" instance=ExtResource("1_sfun1")]
+
+[node name="_WedgeCar" parent="." index="0"]
+surface_material_override/0 = ExtResource("3_o4a0l")
+surface_material_override/1 = ExtResource("4_yfntx")
+surface_material_override/2 = ExtResource("5_fnmk3")

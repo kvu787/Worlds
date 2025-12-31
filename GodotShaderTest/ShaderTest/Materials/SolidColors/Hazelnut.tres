@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://0sgw6nryulmq"]
+
+[ext_resource type="Shader" uid="uid://d1vkqcbs6vtbw" path="res://Shaders/SolidColor.gdshader" id="1_xq81r"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_xq81r")
+shader_parameter/_BASE_COLOR = Color(0.71, 0.42363334, 0.31949997, 1)

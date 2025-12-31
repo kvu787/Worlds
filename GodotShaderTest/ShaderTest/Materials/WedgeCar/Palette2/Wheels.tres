@@ -1,0 +1,12 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://ce15suw1sp3y4"]
+
+[ext_resource type="Shader" uid="uid://b14gisdqxquoh" path="res://Shaders/K1.gdshader" id="1_ddeqb"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_ddeqb")
+shader_parameter/_BASE_COLOR = Color(0.83, 0.2573, 0.83, 1)
+shader_parameter/_FACING_RATIO_POSITION_OF_BASE_COLOR = 0.626000029735
+shader_parameter/_ENABLE_SHADING_SHIFT = false
+shader_parameter/_SHADING_SHIFT_RATIO = 0.5
+shader_parameter/_SHADING_SHIFT_ROTATION_DEGREES = 0.0

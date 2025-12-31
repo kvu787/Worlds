@@ -1,0 +1,98 @@
+[gd_scene load_steps=9 format=3 uid="uid://cu87mla1vkmyx"]
+
+[ext_resource type="PackedScene" uid="uid://dygrb3acjjtqy" path="res://Scenes/Suzanne.tscn" id="1_sb437"]
+[ext_resource type="Material" uid="uid://jp5bqj3plcsj" path="res://Materials/Blue1.tres" id="2_8a0qt"]
+[ext_resource type="Material" uid="uid://b4qvkcl5acwvr" path="res://Materials/Blue1_MagicAngle_ShadingShift.tres" id="3_3hbsr"]
+[ext_resource type="Material" uid="uid://bkuqec5s6mkqy" path="res://Materials/SolidColors/Blue1_Plane.tres" id="4_1jrnc"]
+
+[sub_resource type="Environment" id="Environment_uu6xs"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_rxg2q"]
+radial_segments = 128
+rings = 64
+
+[sub_resource type="BoxMesh" id="BoxMesh_glv2v"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_2seyi"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_uu6xs")
+
+[node name="Set1" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
+
+[node name="Suzanne" parent="Set1" instance=ExtResource("1_sb437")]
+transform = Transform3D(0.9156626, 0.1315245, 0.3798201, 0, 0.9449489, -0.3272179, -0.40194777, 0.2996212, 0.86525434, -4.5, 0, 0)
+
+[node name="_Suzanne" parent="Set1/Suzanne" index="0"]
+material_override = ExtResource("2_8a0qt")
+
+[node name="SuzanneSphere" type="MeshInstance3D" parent="Set1"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1.5, 0, 0)
+material_override = ExtResource("2_8a0qt")
+mesh = SubResource("SphereMesh_rxg2q")
+skeleton = NodePath("../..")
+
+[node name="Cube" type="MeshInstance3D" parent="Set1"]
+transform = Transform3D(0.7071066, -0.7071065, 0, 0.40860695, 0.40860686, 0.81613743, -0.5770963, -0.57709616, 0.5778575, 1.5, 0, 0)
+material_override = ExtResource("3_3hbsr")
+mesh = SubResource("BoxMesh_glv2v")
+skeleton = NodePath("../..")
+
+[node name="CubeSphere" type="MeshInstance3D" parent="Set1"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 4.5, 0, 0)
+material_override = ExtResource("3_3hbsr")
+mesh = SubResource("SphereMesh_rxg2q")
+skeleton = NodePath("../..")
+
+[node name="Set2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1, 0)
+
+[node name="Suzanne" parent="Set2" instance=ExtResource("1_sb437")]
+transform = Transform3D(0.9156626, 0.1315245, 0.3798201, 0, 0.9449489, -0.3272179, -0.40194777, 0.2996212, 0.86525434, -4.5, 0, 0)
+
+[node name="_Suzanne" parent="Set2/Suzanne" index="0"]
+material_override = ExtResource("3_3hbsr")
+
+[node name="SuzanneSphere" type="MeshInstance3D" parent="Set2"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1.5, 0, 0)
+material_override = ExtResource("3_3hbsr")
+mesh = SubResource("SphereMesh_rxg2q")
+skeleton = NodePath("../..")
+
+[node name="Cube" type="MeshInstance3D" parent="Set2"]
+transform = Transform3D(0.7071066, -0.7071065, 0, 0.40860695, 0.40860686, 0.81613743, -0.5770963, -0.57709616, 0.5778575, 1.5, 0, 0)
+material_override = ExtResource("2_8a0qt")
+mesh = SubResource("BoxMesh_glv2v")
+skeleton = NodePath("../..")
+
+[node name="CubeSphere" type="MeshInstance3D" parent="Set2"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 4.5, 0, 0)
+material_override = ExtResource("2_8a0qt")
+mesh = SubResource("SphereMesh_rxg2q")
+skeleton = NodePath("../..")
+
+[node name="BluePlane" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.8478584, -1.2567161, 1)
+material_override = ExtResource("4_1jrnc")
+mesh = SubResource("QuadMesh_2seyi")
+
+[node name="BluePlane2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.919688, 1.269292, 1)
+material_override = ExtResource("4_1jrnc")
+mesh = SubResource("QuadMesh_2seyi")
+
+[node name="BluePlane3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.7039957, 1.2094339, 1)
+material_override = ExtResource("4_1jrnc")
+mesh = SubResource("QuadMesh_2seyi")
+
+[node name="BluePlane4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.680052, -1.1729147, 1)
+material_override = ExtResource("4_1jrnc")
+mesh = SubResource("QuadMesh_2seyi")
+
+[editable path="Set1/Suzanne"]
+[editable path="Set2/Suzanne"]

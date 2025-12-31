@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://ydt5sy1s42fp"]
+
+[ext_resource type="PackedScene" uid="uid://8g67m0etccf8" path="res://Scenes/SlopeCar.tscn" id="1_0mdnh"]
+[ext_resource type="Material" uid="uid://b6l8v1w7w5pn4" path="res://Materials/SlopeCar/Body2.tres" id="2_wxq5a"]
+[ext_resource type="Material" uid="uid://5y1d7uugf8ul" path="res://Materials/SlopeCar/Cabin2.tres" id="3_nxwjx"]
+[ext_resource type="Material" uid="uid://cad51reassoni" path="res://Materials/SlopeCar/Headlights.tres" id="4_vhp2o"]
+[ext_resource type="Material" uid="uid://bfbpj4jdu2nm1" path="res://Materials/SlopeCar/Wheels.tres" id="5_ejuqk"]
+
+[node name="SlopeCarStage" type="Node3D"]
+
+[node name="CameraPivot" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.8161376, 0.5778576, 0, -0.5778576, 0.8161376, 0, 0.8577118, 0)
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.5)
+projection = 1
+size = 5.725
+
+[node name="SlopeCar" parent="." instance=ExtResource("1_0mdnh")]
+transform = Transform3D(0.7071067, 0, 0.7071067, 0, 1, 0, -0.7071067, 0, 0.7071067, 0, 0, 0)
+
+[node name="_SlopeCar" parent="SlopeCar" index="0"]
+material_override = null
+surface_material_override/0 = ExtResource("2_wxq5a")
+surface_material_override/1 = ExtResource("3_nxwjx")
+surface_material_override/2 = ExtResource("4_vhp2o")
+surface_material_override/3 = ExtResource("5_ejuqk")
+
+[editable path="SlopeCar"]
