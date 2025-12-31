@@ -9,3 +9,4 @@ shader_parameter/_BASE_COLOR = Color(0.73774964, 0.42526725, 0.56872815, 1)
 shader_parameter/_FACING_RATIO_POSITION_OF_BASE_COLOR = 0.8660254
 shader_parameter/_ENABLE_SHADING_SHIFT = false
 shader_parameter/_SHADING_SHIFT_RATIO = 0.5
+shader_parameter/_SHADING_SHIFT_ROTATION_DEGREES = 0.0
