@@ -49,17 +49,14 @@ float RemapFacingRatio(float x, float y, float z, float xShift) {
 
 void fragment() {
 	vec3 normal = normalize(NORMAL);
-
 	vec2 rotatedNormalXY = RotateXY(normal.xy, -1.0 * _ROTATION * PI / 180.0);
-	float facingRatio = RemapFacingRatio(rotatedNormalXY.x, rotatedNormalXY.y, normal.z, _SHIFT);
-
+	float remappedFacingRatio = RemapFacingRatio(rotatedNormalXY.x, rotatedNormalXY.y, normal.z, _SHIFT);
 	float facingRatioPositionOfBaseColor = _BASE_COLOR_POSITION;
-
-	vec3 DarkPoint = mix(_BASE_COLOR.rgb, vec3(0.0, 0.0, 0.0), _DARKEN_RATIO);
-	vec3 LightPoint = mix(_BASE_COLOR.rgb, vec3(1.0, 1.0, 1.0), _LIGHTEN_RATIO);
+	vec3 darkPoint = mix(_BASE_COLOR.rgb, vec3(0.0, 0.0, 0.0), _DARKEN_RATIO);
+	vec3 lightPoint = mix(_BASE_COLOR.rgb, vec3(1.0, 1.0, 1.0), _LIGHTEN_RATIO);
 
 	ALBEDO = vec3(
-		SchlickABCD(facingRatio, facingRatioPositionOfBaseColor, _BASE_COLOR.r, DarkPoint.r, LightPoint.r),
-		SchlickABCD(facingRatio, facingRatioPositionOfBaseColor, _BASE_COLOR.g, DarkPoint.g, LightPoint.g),
-		SchlickABCD(facingRatio, facingRatioPositionOfBaseColor, _BASE_COLOR.b, DarkPoint.b, LightPoint.b));
+		SchlickABCD(remappedFacingRatio, facingRatioPositionOfBaseColor, _BASE_COLOR.r, darkPoint.r, lightPoint.r),
+		SchlickABCD(remappedFacingRatio, facingRatioPositionOfBaseColor, _BASE_COLOR.g, darkPoint.g, lightPoint.g),
+		SchlickABCD(remappedFacingRatio, facingRatioPositionOfBaseColor, _BASE_COLOR.b, darkPoint.b, lightPoint.b));
 }
