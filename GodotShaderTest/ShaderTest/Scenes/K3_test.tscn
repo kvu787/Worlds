@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://fwfvmiqmyjow"]
 
 [ext_resource type="Material" uid="uid://dmwapnrg7kos2" path="res://Materials/SolidColors/Black.tres" id="1_tp0ht"]
-[ext_resource type="PackedScene" uid="uid://dygrb3acjjtqy" path="res://Scenes/Suzanne.tscn" id="2_fxpqg"]
+[ext_resource type="PackedScene" uid="uid://dygrb3acjjtqy" path="res://Scenes/GLB/Suzanne.tscn" id="2_fxpqg"]
 [ext_resource type="Material" uid="uid://de471hfhtwvw4" path="res://Materials/K3_test.tres" id="4_fxpqg"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_wdqrb"]

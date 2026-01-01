@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://oedtmkqo2aon"]
 
-[ext_resource type="PackedScene" uid="uid://cwnmnrowfvxkg" path="res://Scenes/WedgeCar.tscn" id="1_bjnh6"]
+[ext_resource type="PackedScene" uid="uid://cwnmnrowfvxkg" path="res://Scenes/GLB/WedgeCar.tscn" id="1_bjnh6"]
 [ext_resource type="Material" uid="uid://box1nuwmpo2s5" path="res://Materials/WedgeCar/Palette2/Body.tres" id="2_7f5e1"]
 [ext_resource type="Material" uid="uid://cohvt7ad0hg1v" path="res://Materials/WedgeCar/Palette2/Cabin.tres" id="3_ik1r7"]
 [ext_resource type="Material" uid="uid://ce15suw1sp3y4" path="res://Materials/WedgeCar/Palette2/Wheels.tres" id="4_dmuit"]
