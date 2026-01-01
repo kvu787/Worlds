@@ -8,7 +8,7 @@
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_dmuit"]
 
-[node name="WedgeCarStage" type="Node3D"]
+[node name="Root" type="Node3D"]
 
 [node name="CameraPivot" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.8161376, 0.5778576, 0, -0.5778576, 0.8161376, 0, 0.8577118, 0)

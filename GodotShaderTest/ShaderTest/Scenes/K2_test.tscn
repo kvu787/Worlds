@@ -10,7 +10,7 @@
 radius = 1.0
 height = 2.0
 
-[node name="K3_Test" type="Node3D"]
+[node name="Root" type="Node3D"]
 
 [node name="Background" type="MeshInstance3D" parent="."]
 transform = Transform3D(47.01606, 0, 0, 0, 23.492712, 0, 0, 0, 0.98432964, 0, 0, -1.608429)
