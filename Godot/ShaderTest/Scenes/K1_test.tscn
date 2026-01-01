@@ -1,11 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://cu87mla1vkmyx"]
 
+[ext_resource type="Environment" uid="uid://boi81h7k6ctsk" path="res://Environment.tres" id="1_8a0qt"]
 [ext_resource type="PackedScene" uid="uid://dygrb3acjjtqy" path="res://Scenes/GLB/Suzanne.tscn" id="1_sb437"]
 [ext_resource type="Material" uid="uid://jp5bqj3plcsj" path="res://Materials/Blue1.tres" id="2_8a0qt"]
 [ext_resource type="Material" uid="uid://b4qvkcl5acwvr" path="res://Materials/Blue1_MagicAngle_ShadingShift.tres" id="3_3hbsr"]
 [ext_resource type="Material" uid="uid://bkuqec5s6mkqy" path="res://Materials/SolidColors/Blue1_Plane.tres" id="4_1jrnc"]
-
-[sub_resource type="Environment" id="Environment_uu6xs"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_rxg2q"]
 radial_segments = 128
@@ -18,7 +17,7 @@ rings = 64
 [node name="Root" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_uu6xs")
+environment = ExtResource("1_8a0qt")
 
 [node name="Set1" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
