@@ -18,6 +18,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.5)
 projection = 1
 size = 5.725
 
+[node name="Background" type="MeshInstance3D" parent="."]
+transform = Transform3D(9.792591, 0, 0, 0, 1, 0, 0, 0, 8.669277, 0, 0, 0)
+material_override = ExtResource("5_g7d46")
+mesh = SubResource("PlaneMesh_ucvpw")
+
 [node name="WedgeCar" parent="." instance=ExtResource("1_l8wa2")]
 transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, 0, 0, 0)
 
@@ -25,10 +30,5 @@ transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70
 surface_material_override/0 = ExtResource("2_l8wa2")
 surface_material_override/1 = ExtResource("3_hri02")
 surface_material_override/2 = ExtResource("4_hic5s")
-
-[node name="Background" type="MeshInstance3D" parent="."]
-transform = Transform3D(9.792591, 0, 0, 0, 1, 0, 0, 0, 8.669277, 0, 0, 0)
-material_override = ExtResource("5_g7d46")
-mesh = SubResource("PlaneMesh_ucvpw")
 
 [editable path="WedgeCar"]
