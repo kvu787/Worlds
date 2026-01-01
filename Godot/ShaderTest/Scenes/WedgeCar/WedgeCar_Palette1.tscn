@@ -1,11 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://molrue13nwj4"]
+[gd_scene load_steps=5 format=3 uid="uid://molrue13nwj4"]
 
 [ext_resource type="Material" uid="uid://dmwapnrg7kos2" path="res://Materials/SolidColors/Black.tres" id="1_3cin2"]
 [ext_resource type="PackedScene" uid="uid://cwnmnrowfvxkg" path="res://Scenes/GLB/WedgeCar.tscn" id="2_sd3mu"]
+[ext_resource type="Environment" uid="uid://boi81h7k6ctsk" path="res://Environment.tres" id="3_whyre"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_g2150"]
 
 [node name="Root" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("3_whyre")
 
 [node name="CameraPivot" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.8161376, 0.5778576, 0, -0.5778576, 0.8161376, 0, 0.8577118, 0)

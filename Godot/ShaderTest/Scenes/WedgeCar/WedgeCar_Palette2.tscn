@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://oedtmkqo2aon"]
+[gd_scene load_steps=8 format=3 uid="uid://oedtmkqo2aon"]
 
 [ext_resource type="PackedScene" uid="uid://cwnmnrowfvxkg" path="res://Scenes/GLB/WedgeCar.tscn" id="1_bjnh6"]
+[ext_resource type="Environment" uid="uid://boi81h7k6ctsk" path="res://Environment.tres" id="1_seyc1"]
 [ext_resource type="Material" uid="uid://box1nuwmpo2s5" path="res://Materials/WedgeCar/Palette2/Body.tres" id="2_7f5e1"]
 [ext_resource type="Material" uid="uid://cohvt7ad0hg1v" path="res://Materials/WedgeCar/Palette2/Cabin.tres" id="3_ik1r7"]
 [ext_resource type="Material" uid="uid://ce15suw1sp3y4" path="res://Materials/WedgeCar/Palette2/Wheels.tres" id="4_dmuit"]
@@ -9,6 +10,9 @@
 [sub_resource type="PlaneMesh" id="PlaneMesh_g2150"]
 
 [node name="Root" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("1_seyc1")
 
 [node name="CameraPivot" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.8161376, 0.5778576, 0, -0.5778576, 0.8161376, 0, 0.8577118, 0)
