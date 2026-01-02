@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://dxa4rh64akgy2"]
+
+[ext_resource type="Shader" uid="uid://yqaxscvgncb0" path="res://Shaders/K4.gdshader" id="1_x6haq"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_x6haq")
+shader_parameter/_BASE_COLOR = Color(0.36556464, 0.39875868, 0.9630527, 1)
+shader_parameter/_LOCK_TO_WORLD_SPACE = true
+shader_parameter/_magnitude = 0.0625

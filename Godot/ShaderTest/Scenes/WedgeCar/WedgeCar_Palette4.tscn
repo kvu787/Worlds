@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://hgdo6uvkrdvs"]
+
+[ext_resource type="Environment" uid="uid://boi81h7k6ctsk" path="res://Environment.tres" id="1_aqgyc"]
+[ext_resource type="PackedScene" uid="uid://cwnmnrowfvxkg" path="res://Scenes/GLB/WedgeCar.tscn" id="3_8rbqg"]
+[ext_resource type="Material" uid="uid://dq4qjpqf3h13b" path="res://Materials/WedgeCar/Palette4/Body.tres" id="4_aqgyc"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_rbeok"]
+
+[node name="Root" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("1_aqgyc")
+
+[node name="WedgeCar" parent="." instance=ExtResource("3_8rbqg")]
+
+[node name="_WedgeCar" parent="WedgeCar" index="0"]
+transform = Transform3D(0.30541137, 0, 0.4342986, 0, 0.5309344, 0, -0.43429852, 0, 0.30541137, 0, 0, 0)
+surface_material_override/0 = ExtResource("4_aqgyc")
+surface_material_override/1 = ExtResource("4_aqgyc")
+surface_material_override/2 = ExtResource("4_aqgyc")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 7.116455)
+material_override = ExtResource("4_aqgyc")
+mesh = SubResource("SphereMesh_rbeok")
+
+[editable path="WedgeCar"]
