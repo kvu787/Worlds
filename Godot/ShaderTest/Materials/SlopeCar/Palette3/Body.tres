@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://60owrhunteks"]
+
+[ext_resource type="Shader" uid="uid://cweoatjmf6ct4" path="res://Shaders/K3.gdshader" id="1_now7k"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_now7k")
+shader_parameter/_BASE_COLOR = Color(0, 0.46499997, 0.9, 1)
+shader_parameter/_BASE_COLOR_POSITION = 0.6930000329175
+shader_parameter/_SHIFT = 0.2890000137275
+shader_parameter/_ROTATION = 46.000002185
+shader_parameter/_DARKEN_RATIO = 1.0
+shader_parameter/_LIGHTEN_RATIO = 1.0

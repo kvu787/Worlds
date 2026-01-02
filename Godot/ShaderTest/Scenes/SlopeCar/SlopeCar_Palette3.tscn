@@ -1,0 +1,41 @@
+[gd_scene load_steps=9 format=3 uid="uid://doourqkjqt4jr"]
+
+[ext_resource type="Environment" uid="uid://boi81h7k6ctsk" path="res://Environment.tres" id="1_txyqm"]
+[ext_resource type="Material" uid="uid://dmwapnrg7kos2" path="res://Materials/SolidColors/Black.tres" id="2_qi4r6"]
+[ext_resource type="PackedScene" uid="uid://8g67m0etccf8" path="res://Scenes/GLB/SlopeCar.tscn" id="3_qo0ep"]
+[ext_resource type="Material" uid="uid://bvvvh6g2n5dic" path="res://Materials/SlopeCar/Palette3/Cabin.tres" id="4_rb7b1"]
+[ext_resource type="Material" uid="uid://60owrhunteks" path="res://Materials/SlopeCar/Palette3/Body.tres" id="5_us5it"]
+[ext_resource type="Material" uid="uid://d215wjvy87dsy" path="res://Materials/SlopeCar/Palette3/Headlights.tres" id="6_5v2ju"]
+[ext_resource type="Material" uid="uid://kvdeucjbvio4" path="res://Materials/SlopeCar/Palette3/Wheels.tres" id="7_o01xw"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ucvpw"]
+
+[node name="Root" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("1_txyqm")
+
+[node name="CameraPivot" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.8161376, 0.5778576, 0, -0.5778576, 0.8161376, 0, 0.633, 0)
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.5)
+projection = 1
+size = 4.5
+far = 100.0
+
+[node name="Background" type="MeshInstance3D" parent="."]
+transform = Transform3D(9.792591, 0, 0, 0, 1, 0, 0, 0, 8.669277, 0, 0, 0)
+material_override = ExtResource("2_qi4r6")
+mesh = SubResource("PlaneMesh_ucvpw")
+
+[node name="SlopeCar" parent="." instance=ExtResource("3_qo0ep")]
+
+[node name="_SlopeCar" parent="SlopeCar" index="0"]
+transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, 0, 0, 0)
+surface_material_override/0 = ExtResource("4_rb7b1")
+surface_material_override/1 = ExtResource("5_us5it")
+surface_material_override/2 = ExtResource("6_5v2ju")
+surface_material_override/3 = ExtResource("7_o01xw")
+
+[editable path="SlopeCar"]

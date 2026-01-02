@@ -1,1 +1,1 @@
-![WedgeCar7.png](Images/WedgeCar7.png)
+![WedgeCar7.png](Images/AllInOne.png)
