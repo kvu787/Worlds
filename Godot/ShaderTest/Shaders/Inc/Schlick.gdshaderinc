@@ -65,10 +65,6 @@ float SchlickABCD_Raw(float t, float a, float b, float c, float d) {
 }
 
 float SchlickABCD(float t, float a, float b, float c, float d) {
-	if (c > d) {
-		return 0.0;
-	}
-
 	if (isnan(t)) { return t; }
 	if (isnan(a)) { return a; }
 	if (isnan(b)) { return b; }
@@ -77,9 +73,14 @@ float SchlickABCD(float t, float a, float b, float c, float d) {
 
 	t = clamp(t, 0.0, 1.0);
 	a = clamp(a, 0.0, 1.0);
-	b = clamp(b, c, d);
+
 	c = clamp(c, 0.0, 1.0);
 	d = clamp(d, 0.0, 1.0);
+	if (c > d) {
+		return 0.0;
+	}
+
+	b = clamp(b, c, d);
 
 	if ((a == 0.0) && (b == c)) {
 		return (d - c) * t + c;
