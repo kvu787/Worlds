@@ -8,6 +8,6 @@ shader = ExtResource("1_2ef75")
 shader_parameter/_BASE_COLOR = Color(0.90982777, 0.79595864, 0, 1)
 shader_parameter/_BASE_COLOR_POSITION = 0.6550000311125
 shader_parameter/_SHIFT = 0.6550000311125
-shader_parameter/_ROTATION = 0.0
+shader_parameter/_ROTATION = 22.000001045
 shader_parameter/_DARKEN_RATIO = 1.0
 shader_parameter/_LIGHTEN_RATIO = 1.0
