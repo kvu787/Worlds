@@ -16,11 +16,11 @@ uniform float _DARKEN_RATIO : hint_range(0.0, 1.0) = 1.0;
 uniform float _LIGHTEN_RATIO : hint_range(0.0, 1.0) = 1.0;
 
 float ZComponent(float x, float y) {
-	return sqrt(1.0 - x*x - y*y);
+	return sqrt(max(0.0, 1.0 - x*x - y*y));
 }
 
 float XComponent(float y, float z) {
-	return sqrt(1.0 - y*y - z*z);
+	return sqrt(max(0.0, 1.0 - y*y - z*z));
 }
 
 /*
