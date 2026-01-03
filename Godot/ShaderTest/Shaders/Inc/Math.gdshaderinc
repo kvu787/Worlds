@@ -7,10 +7,6 @@ float MapRange(float t, float aStart, float aEnd, float bStart, float bEnd) {
 	return ((bEnd - bStart) / (aEnd - aStart)) * (t - aStart) + bStart;
 }
 
-float GetRadius(vec2 xy) {
-	return sqrt(pow(xy.x, 2) + pow(xy.y, 2));
-}
-
 vec2 RotateXY(vec2 xy, float angle) {
     float s = sin(angle);
     float c = cos(angle);
