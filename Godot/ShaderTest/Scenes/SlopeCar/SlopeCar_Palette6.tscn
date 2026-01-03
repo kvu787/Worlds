@@ -1,0 +1,41 @@
+[gd_scene load_steps=9 format=3 uid="uid://djr4tf5myaa0e"]
+
+[ext_resource type="Environment" uid="uid://boi81h7k6ctsk" path="res://Environment.tres" id="1_j4cv6"]
+[ext_resource type="Material" uid="uid://dmwapnrg7kos2" path="res://Materials/SolidColors/Black.tres" id="2_uj3sq"]
+[ext_resource type="PackedScene" uid="uid://8g67m0etccf8" path="res://Scenes/GLB/SlopeCar.tscn" id="3_nmcwj"]
+[ext_resource type="Material" uid="uid://dsryw5kyx5qxd" path="res://Materials/SlopeCar/Palette6/Cabin.tres" id="4_6xw41"]
+[ext_resource type="Material" uid="uid://dhc8wwuseg4ur" path="res://Materials/SlopeCar/Palette6/Body.tres" id="5_rd746"]
+[ext_resource type="Material" uid="uid://c4756s8jx07i3" path="res://Materials/SlopeCar/Palette6/Headlights.tres" id="6_o70j8"]
+[ext_resource type="Material" uid="uid://du4p4btbcuxkw" path="res://Materials/SlopeCar/Palette6/Wheels.tres" id="7_3judv"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ucvpw"]
+
+[node name="Root" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("1_j4cv6")
+
+[node name="CameraPivot" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, 0, 0.868, 0)
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.5)
+projection = 1
+size = 4.5
+far = 100.0
+
+[node name="Background" type="MeshInstance3D" parent="."]
+transform = Transform3D(12, 0, 0, 0, 1, 0, 0, 0, 9, 0, 0, 0)
+material_override = ExtResource("2_uj3sq")
+mesh = SubResource("PlaneMesh_ucvpw")
+
+[node name="SlopeCar" parent="." instance=ExtResource("3_nmcwj")]
+
+[node name="_SlopeCar" parent="SlopeCar" index="0"]
+transform = Transform3D(0.49999997, 0, 0.86602545, 0, 1, 0, -0.86602545, 0, 0.49999997, 0, 0, 0)
+surface_material_override/0 = ExtResource("4_6xw41")
+surface_material_override/1 = ExtResource("5_rd746")
+surface_material_override/2 = ExtResource("6_o70j8")
+surface_material_override/3 = ExtResource("7_3judv")
+
+[editable path="SlopeCar"]
