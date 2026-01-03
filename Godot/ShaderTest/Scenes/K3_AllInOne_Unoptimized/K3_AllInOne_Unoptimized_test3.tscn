@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://tt2ut7f4iuox"]
+
+[ext_resource type="Environment" uid="uid://boi81h7k6ctsk" path="res://Environment.tres" id="1_02deg"]
+[ext_resource type="Material" uid="uid://dmwapnrg7kos2" path="res://Materials/SolidColors/Black.tres" id="2_c2t1v"]
+[ext_resource type="PackedScene" uid="uid://dygrb3acjjtqy" path="res://Scenes/GLB/Suzanne.tscn" id="3_xk8pc"]
+[ext_resource type="Material" uid="uid://dldiawjt7yoft" path="res://Materials/K3_AllInOne_Unoptimized/K3_AllInOne_Unoptimized_test3.tres" id="4_xmo3a"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_wdqrb"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_tk6y1"]
+radius = 1.0
+height = 2.0
+
+[node name="Root" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("1_02deg")
+
+[node name="Background" type="MeshInstance3D" parent="."]
+transform = Transform3D(47.01606, 0, 0, 0, 23.492712, 0, 0, 0, 0.98432964, 0, 0, -1.608429)
+material_override = ExtResource("2_c2t1v")
+mesh = SubResource("QuadMesh_wdqrb")
+
+[node name="Suzanne" parent="." instance=ExtResource("3_xk8pc")]
+transform = Transform3D(0.8701593, 0.13199432, 0.4747634, 0.008519042, 0.95928395, -0.28231534, -0.49269688, 0.24970387, 0.8336053, -1.2908177, 0, 0)
+
+[node name="_Suzanne" parent="Suzanne" index="0"]
+material_override = ExtResource("4_xmo3a")
+
+[node name="Sphere" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 1.3870487, 0, 0)
+material_override = ExtResource("4_xmo3a")
+mesh = SubResource("SphereMesh_tk6y1")
+
+[editable path="Suzanne"]
