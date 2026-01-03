@@ -49,7 +49,7 @@ float RemapFacingRatio(float x, float y, float z, float xShift) {
 
 void fragment() {
 	vec3 normal = normalize(NORMAL);
-	vec2 rotatedNormalXY = RotateXY(normal.xy, -1.0 * _ROTATION * PI / 180.0);
+	vec2 rotatedNormalXY = RotateXY(normal.xy, -1.0 * radians(_ROTATION));
 	float remappedFacingRatio = RemapFacingRatio(rotatedNormalXY.x, rotatedNormalXY.y, normal.z, _SHIFT);
 	float facingRatioPositionOfBaseColor = _BASE_COLOR_POSITION;
 	vec3 darkPoint = mix(_BASE_COLOR.rgb, vec3(0.0, 0.0, 0.0), _DARKEN_RATIO);
