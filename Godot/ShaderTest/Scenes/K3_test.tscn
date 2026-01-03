@@ -29,7 +29,7 @@ material_override = ExtResource("4_fxpqg")
 
 [node name="Sphere" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 1.52, 0, 0)
+material_override = ExtResource("4_fxpqg")
 mesh = SubResource("SphereMesh_tk6y1")
-surface_material_override/0 = ExtResource("4_fxpqg")
 
 [editable path="Suzanne"]
