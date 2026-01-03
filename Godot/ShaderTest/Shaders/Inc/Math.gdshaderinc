@@ -1,8 +1,6 @@
 #ifndef MATH_INC
 #define MATH_INC
 
-#include "res://Shaders/Inc/Schlick.gdshaderinc"
-
 float MapRange(float t, float aStart, float aEnd, float bStart, float bEnd) {
 	return ((bEnd - bStart) / (aEnd - aStart)) * (t - aStart) + bStart;
 }
