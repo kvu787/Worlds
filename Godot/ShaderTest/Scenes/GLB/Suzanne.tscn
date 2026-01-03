@@ -1,9 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://dygrb3acjjtqy"]
-
-[ext_resource type="PackedScene" uid="uid://bomc0g8dsietd" path="res://GLB/Suzanne.glb" id="1_6oini"]
-[ext_resource type="Material" uid="uid://72ttu2bkwh7q" path="res://Materials/GrayScale.tres" id="2_ck3ck"]
-
-[node name="Suzanne" instance=ExtResource("1_6oini")]
-
-[node name="_Suzanne" parent="." index="0"]
-material_override = ExtResource("2_ck3ck")

@@ -2,8 +2,8 @@
 
 [ext_resource type="Environment" uid="uid://boi81h7k6ctsk" path="res://Environment.tres" id="1_02deg"]
 [ext_resource type="Material" uid="uid://dmwapnrg7kos2" path="res://Materials/SolidColors/Black.tres" id="2_c2t1v"]
-[ext_resource type="PackedScene" uid="uid://dygrb3acjjtqy" path="res://Scenes/GLB/Suzanne.tscn" id="3_xk8pc"]
-[ext_resource type="Material" uid="uid://dldiawjt7yoft" path="res://Materials/K3_AllInOne_Unoptimized/K3_AllInOne_Unoptimized_test3.tres" id="4_xmo3a"]
+[ext_resource type="PackedScene" uid="uid://dygrb3acjjtqy" path="res://Scenes/GLB/Monkey.tscn" id="3_xk8pc"]
+[ext_resource type="Material" uid="uid://dldiawjt7yoft" path="res://Materials/Monkey/K3_AllInOne_Unoptimized/K3_AllInOne_Unoptimized_test3.tres" id="4_xmo3a"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_wdqrb"]
 

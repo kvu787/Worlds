@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bomc0g8dsietd"
-path="res://.godot/imported/Suzanne.glb-968d41683526bb9b7e2f89ecb9eb5dc5.scn"
+path="res://.godot/imported/Monkey.glb-29fdce565a1f1034ac95f8221f4355c7.scn"
 
 [deps]
 
-source_file="res://GLB/Suzanne.glb"
-dest_files=["res://.godot/imported/Suzanne.glb-968d41683526bb9b7e2f89ecb9eb5dc5.scn"]
+source_file="res://GLB/Monkey.glb"
+dest_files=["res://.godot/imported/Monkey.glb-29fdce565a1f1034ac95f8221f4355c7.scn"]
 
 [params]
 
