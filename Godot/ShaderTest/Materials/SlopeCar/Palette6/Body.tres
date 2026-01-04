@@ -6,7 +6,7 @@
 render_priority = 0
 shader = ExtResource("1_p7nxj")
 shader_parameter/_BASE_COLOR = Color(0, 0.45466664, 0.88, 1)
-shader_parameter/_BASE_COLOR_POSITION = 0.6930000329175
+shader_parameter/_BRIGHTNESS = 0.3070000145825
 shader_parameter/_SHIFT = 0.394000018715
 shader_parameter/_ROTATION = 60.00000285
 shader_parameter/_DARKEN_RATIO = 1.0

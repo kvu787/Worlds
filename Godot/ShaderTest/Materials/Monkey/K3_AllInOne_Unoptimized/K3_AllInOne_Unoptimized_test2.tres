@@ -6,7 +6,7 @@
 render_priority = 0
 shader = ExtResource("1_u1bik")
 shader_parameter/_BASE_COLOR = Color(0.71, 0.53249997, 0.5709583, 1)
-shader_parameter/_BASE_COLOR_POSITION = 0.8550000406125
+shader_parameter/_BRIGHTNESS = 0.1450000068875
 shader_parameter/_SHIFT = 0.68400003249
 shader_parameter/_ROTATION = 30.000001425
 shader_parameter/_DARKEN_RATIO = 1.0

@@ -26,12 +26,35 @@ shader_type spatial;
 render_mode unshaded;
 
 #define __BLUE vec4(0.039215688, 0.24705882, 0.78431374, 1)
-#define __COSINE_37_DEG 0.79863551
+
+/*
+	This brightness value means that the base color appears at a facing ratio of cosine(37 degrees),
+	which means the surface normal forms an angle of 37 with the light direction.
+
+	    cosine(37 degrees) = 0.79863551
+	1 - cosine(37 degrees) = 0.20136449
+*/
+#define __BRIGHTNESS_COSINE_37_DEG 0.20136449
 
 const float Z_EPSILON = 0.0001;
 
 uniform vec4 _BASE_COLOR : source_color = __BLUE;
-uniform float _BASE_COLOR_POSITION : hint_range(0.0, 1.0) = __COSINE_37_DEG;
+
+/*
+	Brightness is defined as the complement of the facing ratio at which the base color appears.
+
+	The facing ratio is a number from 0.0 to 1.0 that indicates how much of the surface aligns with
+	the light source. 0.0 means the surface is facing perpendicular or away from the light, so it
+	should receive no light. 1.0 means the surface is facing the light directly, so it should
+	receive the most light.
+
+	For example, if you want high brightness, you would want the base color to appear at a very
+	low facing ratio such as 0.2. This limits darkening to a small range from 0.0 to 0.2 and
+	lightening to a much larger range from 0.2 to 1.0. The larger the lightening range is, the
+	brighter the object is.
+*/
+uniform float _BRIGHTNESS : hint_range(0.0, 1.0) = __BRIGHTNESS_COSINE_37_DEG;
+
 uniform float _SHIFT : hint_range(0.0, 1.0) = 0.0;
 uniform float _ROTATION : hint_range(0.0, 360.0) = 0.0;
 uniform float _DARKEN_RATIO : hint_range(0.0, 1.0) = 1.0;
@@ -192,7 +215,7 @@ void fragment() {
 	vec3 normal = normalize(NORMAL);
 	vec2 rotatedNormalXY = RotateXY(normal.xy, -1.0 * radians(_ROTATION));
 	float remappedFacingRatio = RemapFacingRatio(rotatedNormalXY.x, rotatedNormalXY.y, normal.z, _SHIFT);
-	float facingRatioPositionOfBaseColor = _BASE_COLOR_POSITION;
+	float facingRatioPositionOfBaseColor = 1.0 - _BRIGHTNESS;
 	vec3 darkPoint = mix(_BASE_COLOR.rgb, vec3(0.0, 0.0, 0.0), _DARKEN_RATIO);
 	vec3 lightPoint = mix(_BASE_COLOR.rgb, vec3(1.0, 1.0, 1.0), _LIGHTEN_RATIO);
 
