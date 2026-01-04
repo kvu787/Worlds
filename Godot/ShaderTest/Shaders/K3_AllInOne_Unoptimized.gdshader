@@ -36,9 +36,9 @@ render_mode unshaded;
 */
 #define __BRIGHTNESS_COSINE_37_DEG 0.20136449
 
-const float Z_EPSILON = 0.0001;
+const float ZEpsilon = 0.0001;
 
-uniform vec4 _BASE_COLOR : source_color = __BLUE;
+uniform vec4 BaseColor : source_color = __BLUE;
 
 /*
 	Brightness is defined as the complement of the facing ratio at which the base color appears.
@@ -53,12 +53,12 @@ uniform vec4 _BASE_COLOR : source_color = __BLUE;
 	lightening to a much larger range from 0.2 to 1.0. The larger the lightening range is, the
 	brighter the object is.
 */
-uniform float _BRIGHTNESS : hint_range(0.0, 1.0) = __BRIGHTNESS_COSINE_37_DEG;
+uniform float Brightness : hint_range(0.0, 1.0) = __BRIGHTNESS_COSINE_37_DEG;
 
-uniform float _SHIFT : hint_range(0.0, 1.0) = 0.0;
-uniform float _ROTATION : hint_range(0.0, 360.0) = 0.0;
-uniform float _DARKEN_RATIO : hint_range(0.0, 1.0) = 1.0;
-uniform float _LIGHTEN_RATIO : hint_range(0.0, 1.0) = 1.0;
+uniform float Shift : hint_range(0.0, 1.0) = 0.0;
+uniform float Rotation : hint_range(0.0, 360.0) = 0.0;
+uniform float ShadowIntensity : hint_range(0.0, 1.0) = 1.0;
+uniform float HighlightIntensity : hint_range(0.0, 1.0) = 1.0;
 
 /*
 	This is a modified form of Christophe Schlick's bias function.
@@ -196,7 +196,7 @@ float XComponent(float y, float z) {
 	The remapped surface resembles a warped hemisphere.
 */
 float RemapFacingRatio(float x, float y, float z, float xShift) {
-	if (abs(z) < Z_EPSILON) {
+	if (abs(z) < ZEpsilon) {
 		return 0.0;
 	}
 
@@ -213,14 +213,14 @@ float RemapFacingRatio(float x, float y, float z, float xShift) {
 
 void fragment() {
 	vec3 normal = normalize(NORMAL);
-	vec2 rotatedNormalXY = RotateXY(normal.xy, -1.0 * radians(_ROTATION));
-	float remappedFacingRatio = RemapFacingRatio(rotatedNormalXY.x, rotatedNormalXY.y, normal.z, _SHIFT);
-	float facingRatioPositionOfBaseColor = 1.0 - _BRIGHTNESS;
-	vec3 darkPoint = mix(_BASE_COLOR.rgb, vec3(0.0, 0.0, 0.0), _DARKEN_RATIO);
-	vec3 lightPoint = mix(_BASE_COLOR.rgb, vec3(1.0, 1.0, 1.0), _LIGHTEN_RATIO);
+	vec2 rotatedNormalXY = RotateXY(normal.xy, -1.0 * radians(Rotation));
+	float remappedFacingRatio = RemapFacingRatio(rotatedNormalXY.x, rotatedNormalXY.y, normal.z, Shift);
+	float facingRatioPositionOfBaseColor = 1.0 - Brightness;
+	vec3 darkPoint = mix(BaseColor.rgb, vec3(0.0, 0.0, 0.0), ShadowIntensity);
+	vec3 lightPoint = mix(BaseColor.rgb, vec3(1.0, 1.0, 1.0), HighlightIntensity);
 
 	ALBEDO = vec3(
-		SchlickABCD(remappedFacingRatio, facingRatioPositionOfBaseColor, _BASE_COLOR.r, darkPoint.r, lightPoint.r),
-		SchlickABCD(remappedFacingRatio, facingRatioPositionOfBaseColor, _BASE_COLOR.g, darkPoint.g, lightPoint.g),
-		SchlickABCD(remappedFacingRatio, facingRatioPositionOfBaseColor, _BASE_COLOR.b, darkPoint.b, lightPoint.b));
+		SchlickABCD(remappedFacingRatio, facingRatioPositionOfBaseColor, BaseColor.r, darkPoint.r, lightPoint.r),
+		SchlickABCD(remappedFacingRatio, facingRatioPositionOfBaseColor, BaseColor.g, darkPoint.g, lightPoint.g),
+		SchlickABCD(remappedFacingRatio, facingRatioPositionOfBaseColor, BaseColor.b, darkPoint.b, lightPoint.b));
 }

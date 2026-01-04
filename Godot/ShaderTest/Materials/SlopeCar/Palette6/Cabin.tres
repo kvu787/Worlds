@@ -5,9 +5,9 @@
 [resource]
 render_priority = 0
 shader = ExtResource("1_lvw14")
-shader_parameter/_BASE_COLOR = Color(0.5673, 0.76074, 0.93, 1)
-shader_parameter/_BRIGHTNESS = 0.2610000123975
-shader_parameter/_SHIFT = 0.594000028215
-shader_parameter/_ROTATION = 38.000001805
-shader_parameter/_DARKEN_RATIO = 1.0
-shader_parameter/_LIGHTEN_RATIO = 1.0
+shader_parameter/BaseColor = Color(0.5673, 0.76074, 0.93, 1)
+shader_parameter/Brightness = 0.2610000123975
+shader_parameter/Shift = 0.594000028215
+shader_parameter/Rotation = 38.000001805
+shader_parameter/ShadowIntensity = 1.0
+shader_parameter/HighlightIntensity = 1.0

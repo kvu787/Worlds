@@ -5,9 +5,9 @@
 [resource]
 render_priority = 0
 shader = ExtResource("1_0ui85")
-shader_parameter/_BASE_COLOR = Color(0.039215688, 0.24705882, 0.78431374, 1)
-shader_parameter/_BRIGHTNESS = 0.20136449
-shader_parameter/_SHIFT = 0.95600004541
-shader_parameter/_ROTATION = 0.0
-shader_parameter/_DARKEN_RATIO = 1.0
-shader_parameter/_LIGHTEN_RATIO = 1.0
+shader_parameter/BaseColor = Color(0.039215688, 0.24705882, 0.78431374, 1)
+shader_parameter/Brightness = 0.20136449
+shader_parameter/Shift = 0.95600004541
+shader_parameter/Rotation = 0.0
+shader_parameter/ShadowIntensity = 1.0
+shader_parameter/HighlightIntensity = 1.0
