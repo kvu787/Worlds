@@ -27,7 +27,7 @@ render_mode unshaded;
 
 /*
 	This brightness value means that the base color appears at a facing ratio of cosine(37 degrees),
-	which means the surface normal forms an angle of 37 with the light direction.
+	which means the surface normal forms an angle of 37 degrees with the light direction.
 
 	    cosine(37 degrees) = 0.79863551
 	1 - cosine(37 degrees) = 0.20136449
