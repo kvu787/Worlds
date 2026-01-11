@@ -115,5 +115,8 @@ def print_nurbs_math():
 
         print(f"\n{'='*80}")
 
-if __name__ == "__main__":
+def main():
     print_nurbs_math()
+
+if __name__ == "__main__":
+    main()
