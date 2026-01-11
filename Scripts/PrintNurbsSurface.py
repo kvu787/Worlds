@@ -1,7 +1,7 @@
 import bpy
 
-def point_to_string(point, fs='0.2f'):
-    return f"(x = {point.co.x:{fs}}, y = {point.co.y:{fs}}, z = {point.co.z:{fs}}, w = {point.co.w:{fs}})"
+def point_to_string(point):
+    return f"(x = {point.co.x!r}, y = {point.co.y!r}, z = {point.co.z!r}, w = {point.co.w!r})"
 
 def print_nurbs_math():
     selected_objects = bpy.context.selected_objects
@@ -62,8 +62,7 @@ def print_nurbs_math():
             for i in range(points_u):
                 print(f"      i = {i}")
                 for j in range(points_v):
-                    print(f"        j = {j}")
-                    print(f"        {point_to_string(spline.points[i * points_v + j])}")
+                    print(f"        j = {j} {point_to_string(spline.points[i * points_v + j])}")
             print()
 
 
