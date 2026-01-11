@@ -52,16 +52,13 @@ def print_nurbs_math():
         print("Error: No NURBS Surface objects are currently selected.")
         return
 
-    print(f"\n{'='*80}")
+    print("=" * 80)
     print(f"PROCESSING {len(nurbs_surfaces)} SELECTED NURBS SURFACE(S)")
-    print(f"{'='*80}")
+    print()
 
     for obj_index, obj in enumerate(nurbs_surfaces):
-        print(f"\nOBJECT {obj_index + 1}/{len(nurbs_surfaces)}: {obj.name}")
         print("-" * 40)
-
-        # Matrix to transform local coords to global
-        matrix_world = obj.matrix_world
+        print(f"OBJECT {obj_index + 1}/{len(nurbs_surfaces)}: {obj.name}")
 
         for i, spline in enumerate(obj.data.splines):
             if spline.type != 'NURBS':
@@ -112,8 +109,7 @@ def print_nurbs_math():
                 print(row_str)
                 for c in coords:
                     print(f"        {c}")
-
-        print(f"\n{'='*80}")
+        print()
 
 def main():
     print_nurbs_math()
