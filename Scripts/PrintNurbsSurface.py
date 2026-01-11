@@ -26,7 +26,7 @@ def print_nurbs_math():
                 print()
                 continue
 
-            print(f"  >>> Spline/Patch {i}")
+            print(f"  >>> Spline/Patch {i} NURBS Surface Definition")
             print()
 
             points_u = spline.point_count_u
