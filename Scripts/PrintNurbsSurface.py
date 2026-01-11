@@ -59,13 +59,15 @@ def print_nurbs_math():
     for obj_index, obj in enumerate(nurbs_surfaces):
         print("-" * 40)
         print(f"OBJECT {obj_index + 1}/{len(nurbs_surfaces)}: {obj.name}")
+        print()
 
         for i, spline in enumerate(obj.data.splines):
             if spline.type != 'NURBS':
                 print(f"  Skipping Spline {i} (Type: {spline.type} - Not NURBS)")
                 continue
 
-            print(f"\n  >>> Spline/Patch {i}")
+            print(f"  >>> Spline/Patch {i}")
+            print()
 
             u_count = spline.point_count_u
             v_count = spline.point_count_v
@@ -89,10 +91,11 @@ def print_nurbs_math():
             knots_u = calculate_knots(order_u, u_count, end_u, bez_u, cyc_u)
             knots_v = calculate_knots(order_v, v_count, end_v, bez_v, cyc_v)
 
-            print(f"\n    Knot Vector U (Size {len(knots_u)}): {knots_u}")
+            print(f"    Knot Vector U (Size {len(knots_u)}): {knots_u}")
             print(f"    Knot Vector V (Size {len(knots_v)}): {knots_v}")
+            print()
 
-            print("\n    Control Points (Local Coordinates):")
+            print("    Control Points (Local Coordinates):")
             points = spline.points
 
             for v in range(v_count):
