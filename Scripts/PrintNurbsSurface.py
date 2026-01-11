@@ -74,8 +74,8 @@ def print_nurbs_math():
             order_u = spline.order_u
             order_v = spline.order_v
 
-            print(f"    Grid: {u_count} (U) x {v_count} (V)")
-            print(f"    Order: U={order_u} (Deg {order_u - 1}), V={order_v} (Deg {order_v - 1})")
+            print(f"    Grid:  U={u_count} V={v_count}")
+            print(f"    Order: U={order_u} V={order_v}")
 
             # Extract flags for clarity
             end_u, end_v = spline.use_endpoint_u, spline.use_endpoint_v
@@ -91,8 +91,8 @@ def print_nurbs_math():
             knots_u = calculate_knots(order_u, u_count, end_u, bez_u, cyc_u)
             knots_v = calculate_knots(order_v, v_count, end_v, bez_v, cyc_v)
 
-            print(f"    Knot Vector U (Size {len(knots_u)}): {knots_u}")
-            print(f"    Knot Vector V (Size {len(knots_v)}): {knots_v}")
+            print(f"    Knot Vector U: Size={len(knots_u)} {knots_u}")
+            print(f"    Knot Vector V: Size={len(knots_v)} {knots_v}")
             print()
 
             print("    Control Points (Local Coordinates):")
