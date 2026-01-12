@@ -1,5 +1,45 @@
 import bpy
 
+def compute_knot_vector(points_count, order, use_endpoint, use_cyclic):
+    """
+    Computes the knot vector for a NURBS dimension (U or V).
+    Assumes use_bezier is False.
+    """
+    # Total number of knots in the vector
+    knot_count = points_count + order
+    
+    knots = []
+
+    if use_endpoint and not use_cyclic:
+        # CLAMPED KNOT VECTOR
+        # Used when 'Endpoint' is True (and not Cyclic).
+        # Multiplicity of first and last knots equals the order.
+        # The range is normalized to [0.0, 1.0].
+        
+        # Add 'order' number of 0.0s at the start
+        knots.extend([0.0] * order)
+        
+        # Calculate internal knots
+        # We need to distribute (points_count - order) knots evenly between 0 and 1
+        internal_knots_count = points_count - order
+        if internal_knots_count > 0:
+            # The denominator is the number of spans formed by internal knots + 1
+            # e.g., 1 internal knot creates 2 spans (0 -> 0.5 -> 1)
+            denominator = internal_knots_count + 1
+            for i in range(1, denominator):
+                knots.append(i / denominator)
+        
+        # Add 'order' number of 1.0s at the end
+        knots.extend([1.0] * order)
+
+    else:
+        # UNIFORM KNOT VECTOR
+        # Used when 'Endpoint' is False (Unclamped) OR 'Cyclic' is True.
+        # This is a simple sequence: 0.0, 1.0, 2.0, ...
+        knots = [float(i) for i in range(knot_count)]
+        
+    return knots
+
 def point_to_string(point):
     return f"(x = {point.co.x!r}, y = {point.co.y!r}, z = {point.co.z!r}, w = {point.co.w!r})"
 
@@ -54,6 +94,17 @@ def print_nurbs_math():
             print(f"      Cyclic V   = {cyc_v}")
             print()
 
+            knots_u = None
+            knots_v = None
+            if bez_u or bez_v:
+                knots_u = "Computed by Blender based on the above parameters"
+                knots_v = knots_u
+            else:
+                knots_u = compute_knot_vector(points_u, order_u, end_u, cyc_u)
+                knots_v = compute_knot_vector(points_v, order_v, end_v, cyc_v)
+            print(f"    Knot Vector U = {knots_u}")
+            print(f"    Knot Vector V = {knots_v}")
+            print()
 
             print("    Control Points List (Local Coordinates):")
             for pt in spline.points:
