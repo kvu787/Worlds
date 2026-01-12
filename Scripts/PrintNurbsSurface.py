@@ -20,13 +20,13 @@ def print_nurbs_math():
         print(f"OBJECT {obj_index + 1}/{len(nurbs_surfaces)}: {obj.name}")
         print()
 
-        for i, spline in enumerate(obj.data.splines):
+        for spline_index, spline in enumerate(obj.data.splines):
             if spline.type != 'NURBS':
-                print(f"  Skipping Spline {i} (Type: {spline.type} - Not NURBS)")
+                print(f"  Skipping Spline {spline_index} (Type: {spline.type} - Not NURBS)")
                 print()
                 continue
 
-            print(f"  >>> Spline/Patch {i} NURBS Surface Definition")
+            print(f"  >>> Spline/Patch {spline_index} NURBS Surface Definition")
             print()
 
             points_u = spline.point_count_u
@@ -54,15 +54,18 @@ def print_nurbs_math():
             print(f"      Cyclic V   = {cyc_v}")
             print()
 
-            print(f"    Knot Vector U = Computed by Blender based on the above parameters")
-            print(f"    Knot Vector V = Computed by Blender based on the above parameters")
+
+            print("    Control Points List (Local Coordinates):")
+            for pt in spline.points:
+                print(f"        {point_to_string(pt)}")
             print()
 
-            print("    Control Points (Local Coordinates):")
-            for i in range(points_u):
-                print(f"      i = {i}")
-                for j in range(points_v):
-                    print(f"        j = {j} {point_to_string(spline.points[i * points_v + j])}")
+            print("    Control Points Grid (Local Coordinates):")
+            for j in range(points_v):
+                print(f"      j = {j}")
+                for i in range(points_u):
+                    # Blender stores control points in spline.points in V-major order
+                    print(f"        i = {i} {point_to_string(spline.points[j * points_u + i])}")
             print()
 
 
