@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1tbaacq2y5gx"]
+
+[ext_resource type="PackedScene" uid="uid://bdx3i6wy0323c" path="res://GLB/nurbs3.glb" id="1_anhln"]
+[ext_resource type="Material" uid="uid://cyorxyj37w7ma" path="res://Materials/nurbs.tres" id="2_ab50r"]
+
+[node name="nurbs3" instance=ExtResource("1_anhln")]
+
+[node name="SurfPatch" parent="." index="0"]
+material_override = ExtResource("2_ab50r")

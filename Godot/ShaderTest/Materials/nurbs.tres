@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://cyorxyj37w7ma"]
+
+[ext_resource type="Shader" uid="uid://js341pgvx687" path="res://Shaders/K3_AllInOne_Unoptimized.gdshader" id="1_dgsr3"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_dgsr3")
+shader_parameter/BaseColor = Color(0.039215688, 0.24705882, 0.78431374, 1)
+shader_parameter/Brightness = 0.2010000095475
+shader_parameter/Shift = 0.3630000172425
+shader_parameter/Rotation = 0.0
+shader_parameter/ShadowIntensity = 1.0
+shader_parameter/HighlightIntensity = 1.0

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwmy43dxlksff"]
+
+[ext_resource type="PackedScene" uid="uid://vo5hm3we5bks" path="res://GLB/NurbsSolidTest4.glb" id="1_cksrj"]
+[ext_resource type="Material" uid="uid://cyorxyj37w7ma" path="res://Materials/nurbs.tres" id="2_sik7t"]
+
+[node name="NurbsSolidTest4" instance=ExtResource("1_cksrj")]
+
+[node name="SurfPatch_001" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2045337, 0, -0.5777791)
+material_override = ExtResource("2_sik7t")
