@@ -3,14 +3,15 @@ import bmesh
 import math
 from mathutils import Vector
 
+# todo: use limit surface positions
+# todo: use limit surface tangents/normals
+# todo: use lookup table for get_loop_beta if this is too slow
+
 def get_loop_beta(n):
     """
     Calculates the beta weight for a vertex with n neighbors
     based on Charles Loop's original formula.
     """
-    if n == 3:
-        return 3.0 / 16.0
-
     # Loop's formula
     val = 3.0/8.0 + (1.0/4.0) * math.cos(2.0 * math.pi / n)
     beta = (1.0 / n) * (5.0/8.0 - val**2)
@@ -151,11 +152,11 @@ def loop_subdivision(obj, iterations=1):
 # --- Execution ---
 active_obj = bpy.context.active_object
 
-iterations=3
+ITERATIONS=3
 
 if active_obj and active_obj.type == 'MESH':
     print(f"Applying Loop Subdivision to {active_obj.name}...")
-    loop_subdivision(active_obj, iterations)
+    loop_subdivision(active_obj, ITERATIONS)
     print("Done.")
 else:
     print("Please select a mesh object.")
