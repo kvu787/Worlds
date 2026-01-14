@@ -1,3 +1,13 @@
+i would like to make a g2 fuselage surface where one end is a smooth tip and the other end is open in a way to separately model and attach other parts of the full fuselage.
+
+I would like flexibility in the shape of the fuselage. i.e. it shouldn't just be a perfect circle or ellipse. it could be something like a rounded triangle with "spokes" of varying lengths.
+
+the purpose of this fuselage and the overall model will be for a 3d video game
+
+list the best approaches to accomplish this
+
+-------
+
 uvx --from aristotlelib@latest aristotle
 
 -----

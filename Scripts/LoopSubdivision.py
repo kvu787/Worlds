@@ -6,6 +6,9 @@ from mathutils import Vector
 # todo: use limit surface positions
 # todo: use limit surface tangents/normals
 # todo: use lookup table for get_loop_beta if this is too slow
+# todo: investigate paper for limiting bounding curvature for extraordinary vertices
+#   Triangle Mesh Subdivision with Bounded Curvature and the Convex Hull Property, Charles Loop, 2001
+#   https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/tr-2001-24.pdf
 
 def get_loop_beta(n):
     """
