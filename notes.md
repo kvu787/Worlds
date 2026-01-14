@@ -1,3 +1,79 @@
+uvx --from aristotlelib@latest aristotle
+
+-----
+
+for each of the below nurb surface:
+1. interpret this nurbs surface as a geometric manifold
+2. then, analyze the geometric continuity of the geometric manifold
+
+by "interpret the nurbs surface as a geometric manifold", you can follow this procedure:
+- Input = A NURBS surface. Specifically, a single "patch".
+- Let the U and V resolution of the surface approach infinity.
+- Convert the NURBS surface to a mesh.
+- Deduplicate the vertices of the mesh.
+- Output this mesh as a geometric manifold.
+
+note that i am asking about the geometric continuity of the geometric manifold, not the parametric continuity
+
+----------------------------------------
+OBJECT 1/1: coplanar
+
+  >>> Spline/Patch 0 NURBS Surface Definition
+
+    Points Along U = 3
+    Points Along V = 3
+    Order U = 3
+    Order V = 3
+
+    Blender Flags:
+      Endpoint U = False
+      Endpoint V = True
+      Bezier U   = False
+      Bezier V   = False
+      Cyclic U   = True
+      Cyclic V   = False
+
+    Knot Vector U = [0.0, 1.0, 2.0, 3.0, 4.0, 5.0]
+    Knot Vector V = [0.0, 0.0, 0.0, 1.0, 1.0, 1.0]
+
+    Control Points List (Local Coordinates):
+        (x = -1.0360651016235352, y = 1.189190149307251, z = 0.0, w = 1.0)
+        (x = 1.4190162420272827, y = 0.05896696448326111, z = 0.0, w = 1.0)
+        (x = -0.5834140181541443, y = -1.5090492963790894, z = 0.0, w = 1.0)
+        (x = -0.8752099275588989, y = 0.8315441608428955, z = 1.0, w = 1.0)
+        (x = 3.12941312789917, y = 0.3168656826019287, z = 1.0, w = 1.0)
+        (x = -2.254434823989868, y = -1.6914641857147217, z = 1.0, w = 1.0)
+        (x = -0.030565455555915833, y = -0.1399552822113037, z = 1.0, w = 1.0)
+        (x = -0.030565455555915833, y = -0.1399552822113037, z = 1.0, w = 1.0)
+        (x = -0.030565455555915833, y = -0.1399552822113037, z = 1.0, w = 1.0)
+
+    Control Points Grid (Local Coordinates):
+      j = 0
+        i = 0 (x = -1.0360651016235352, y = 1.189190149307251, z = 0.0, w = 1.0)
+        i = 1 (x = 1.4190162420272827, y = 0.05896696448326111, z = 0.0, w = 1.0)
+        i = 2 (x = -0.5834140181541443, y = -1.5090492963790894, z = 0.0, w = 1.0)
+      j = 1
+        i = 0 (x = -0.8752099275588989, y = 0.8315441608428955, z = 1.0, w = 1.0)
+        i = 1 (x = 3.12941312789917, y = 0.3168656826019287, z = 1.0, w = 1.0)
+        i = 2 (x = -2.254434823989868, y = -1.6914641857147217, z = 1.0, w = 1.0)
+      j = 2
+        i = 0 (x = -0.030565455555915833, y = -0.1399552822113037, z = 1.0, w = 1.0)
+        i = 1 (x = -0.030565455555915833, y = -0.1399552822113037, z = 1.0, w = 1.0)
+        i = 2 (x = -0.030565455555915833, y = -0.1399552822113037, z = 1.0, w = 1.0)
+
+-------
+
+
+We define the following function:
+- Name = Surface to infinite mesh (Stim)
+- Input = A NURBS surface. Specifically, a single "patch".
+- Let the U and V resolution of the surface approach infinity.
+- Convert the NURBS surface to a mesh.
+- Deduplicate the vertices of the mesh.
+- Output this mesh as a surface.
+
+-----
+
 provide python code to do the following
 
 0 <= float Hue < 360
