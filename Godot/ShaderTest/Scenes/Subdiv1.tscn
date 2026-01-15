@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctcfrgpe1o2p0"]
+
+[ext_resource type="PackedScene" uid="uid://bwtwrfyb6v73p" path="res://GLB/Subdiv1.glb" id="1_kbumi"]
+[ext_resource type="Material" uid="uid://by338uhm6fnyd" path="res://Materials/Subdiv1.tres" id="2_hal41"]
+
+[node name="Subdiv1" instance=ExtResource("1_kbumi")]
+
+[node name="_Subdiv1" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.24975687)
+material_override = ExtResource("2_hal41")
