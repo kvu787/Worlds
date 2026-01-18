@@ -1,16 +1,22 @@
 import bpy
 
-# Get the active object
-obj = bpy.context.active_object
+# Get all currently selected objects
+selected_objs = bpy.context.selected_objects
 
-if obj and obj.type == 'MESH':
-    print(f"--- Full Precision Local Coordinates: {obj.name} ---")
+# Filter the selection to only include meshes
+mesh_objects = [obj for obj in selected_objs if obj.type == 'MESH']
 
-    mesh = obj.data
+# Sort the objects by name alphabetically
+mesh_objects.sort(key=lambda obj: obj.name)
 
-    for v in mesh.vertices:
-        # Use repr() for the most unambiguous representation of the float
-        # or use '.20f' to force 20 decimal places
-        print(f"Vertex {v.index}: X={repr(v.co.x)}, Y={repr(v.co.y)}, Z={repr(v.co.z)}")
+if mesh_objects:
+    for obj in mesh_objects:
+        print(f"Local coordinates: {obj.name}")
+
+        mesh = obj.data
+
+        for v in mesh.vertices:
+            # repr() provides the hardware-level float representation
+            print(f"Vertex {v.index}: X={repr(v.co.x)}, Y={repr(v.co.y)}, Z={repr(v.co.z)}")
 else:
-    print("Please select a mesh object.")
+    print("No mesh objects found in selection.")
