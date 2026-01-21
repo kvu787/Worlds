@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://dgevdxsg2gsr4"]
+
+[ext_resource type="Shader" uid="uid://js341pgvx687" path="res://Shaders/K3_AllInOne_Unoptimized.gdshader" id="1_h68tg"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_h68tg")
+shader_parameter/BaseColor = Color(0.78, 0.49595, 0.03900001, 1)
+shader_parameter/Brightness = 0.1270000060325
+shader_parameter/Shift = 0.87600004161
+shader_parameter/Rotation = 60.4710028723725
+shader_parameter/ShadowIntensity = 1.0
+shader_parameter/HighlightIntensity = 1.0
