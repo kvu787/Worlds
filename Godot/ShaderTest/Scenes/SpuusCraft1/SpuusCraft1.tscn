@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://81oxj1l4dhgo" path="res://GLB/SpuusCraft1.glb" id="1_5khce"]
 [ext_resource type="Material" uid="uid://dgevdxsg2gsr4" path="res://Materials/SpuusCraft1/Cabin.tres" id="2_kwc2e"]
-[ext_resource type="Material" uid="uid://b44joj8puqaa2" path="res://Materials/SpuusCraft1/Body.tres" id="3_syojm"]
+[ext_resource type="Material" uid="uid://dg8at28deaf0t" path="res://Materials/SpuusCraft1/Body.tres" id="3_syojm"]
 
 [node name="SpuusCraft1" instance=ExtResource("1_5khce")]
 

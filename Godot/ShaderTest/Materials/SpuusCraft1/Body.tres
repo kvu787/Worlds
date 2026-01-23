@@ -1,10 +1,10 @@
-[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://b44joj8puqaa2"]
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://dg8at28deaf0t"]
 
-[ext_resource type="Shader" uid="uid://js341pgvx687" path="res://Shaders/K3_AllInOne_Unoptimized.gdshader" id="1_sq4yn"]
+[ext_resource type="Shader" uid="uid://js341pgvx687" path="res://Shaders/K3_AllInOne_Unoptimized.gdshader" id="1_5vwc4"]
 
 [resource]
 render_priority = 0
-shader = ExtResource("1_sq4yn")
+shader = ExtResource("1_5vwc4")
 shader_parameter/BaseColor = Color(0.039215688, 0.24705882, 0.78431374, 1)
 shader_parameter/Brightness = 0.06000000285
 shader_parameter/Shift = 0.7350000349125

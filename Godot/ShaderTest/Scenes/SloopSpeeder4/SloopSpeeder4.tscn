@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://kbghsvnpvap1"]
+
+[ext_resource type="PackedScene" uid="uid://bclafeat5x5n2" path="res://GLB/SloopSpeeder4.glb" id="1_porrx"]
+[ext_resource type="Material" uid="uid://b44joj8puqaa2" path="res://Materials/SloopSpeeder4/Body.tres" id="2_2bcmd"]
+
+[node name="SloopSpeeder4" instance=ExtResource("1_porrx")]
+
+[node name="_SloopSpeeder4" parent="." index="0"]
+material_override = ExtResource("2_2bcmd")
