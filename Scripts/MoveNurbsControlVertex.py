@@ -57,20 +57,12 @@ Inner ring
 
 Corners
 (0,0,0)
-    (2,2,0)
-    (1,2,0)
-    (1,1,0)
-    (2,1,0)
 (3,0,0)
 (3,3,0)
 (0,3,0)
 
 Sides
 (1,0,0)
-    (1,1,0)
-    (2,1,0)
-    (2,2,0)
-    (1,2,0)
 (2,0,0)
 (3,1,0)
 (3,2,0)
@@ -78,7 +70,146 @@ Sides
 (1,3,0)
 (0,2,0)
 (0,1,0)
+
+Targets
+(1,1,0)
+(2,1,0)
+(2,2,0)
+(1,2,0)
+
 '''
 
-# Run the function
-move_nurbs_control_point(old=(2, 1, 1), new=(3, 3, 3), epsilon=0)
+Corners = (
+    (0,0,0),
+    (3,0,0),
+    (3,3,0),
+    (0,3,0),
+)
+
+Sides = (
+    (1,0,0),
+    (2,0,0),
+    (3,1,0),
+    (3,2,0),
+    (2,3,0),
+    (1,3,0),
+    (0,2,0),
+    (0,1,0),
+)
+
+Targets = (
+    (1,1,0),
+    (2,1,0),
+    (2,2,0),
+    (1,2,0),
+)
+
+def main():
+    ############################
+    ### Corner shift options ###
+    ############################
+
+    cornerShifts_Closer = [
+        [Corners[0], Targets[0]],
+        [Corners[1], Targets[1]],
+        [Corners[2], Targets[2]],
+        [Corners[3], Targets[3]],
+    ]
+
+    cornerShifts_Farther = [
+        [Corners[0], Targets[2]],
+        [Corners[1], Targets[3]],
+        [Corners[2], Targets[1]],
+        [Corners[3], Targets[2]],
+    ]
+
+    ##########################
+    ### Edge shift options ###
+    ##########################
+
+    sideShifts_1stClosest = [
+        [Sides[0], Targets[0]],
+        [Sides[1], Targets[1]],
+        [Sides[2], Targets[1]],
+        [Sides[3], Targets[2]],
+        [Sides[4], Targets[2]],
+        [Sides[5], Targets[3]],
+        [Sides[6], Targets[3]],
+        [Sides[7], Targets[0]],
+    ]
+
+    sideShifts_2ndClosest = [
+        [Sides[0], Targets[1]],
+        [Sides[1], Targets[0]],
+        [Sides[2], Targets[2]],
+        [Sides[3], Targets[1]],
+        [Sides[4], Targets[3]],
+        [Sides[5], Targets[2]],
+        [Sides[6], Targets[0]],
+        [Sides[7], Targets[3]],
+    ]
+
+    sideShifts_3rdClosest = [
+        [Sides[0], Targets[3]],
+        [Sides[1], Targets[2]],
+        [Sides[2], Targets[0]],
+        [Sides[3], Targets[3]],
+        [Sides[4], Targets[1]],
+        [Sides[5], Targets[0]],
+        [Sides[6], Targets[2]],
+        [Sides[7], Targets[1]],
+    ]
+
+    sideShifts_4thClosest = [
+        [Sides[0], Targets[2]],
+        [Sides[1], Targets[3]],
+        [Sides[2], Targets[3]],
+        [Sides[3], Targets[0]],
+        [Sides[4], Targets[0]],
+        [Sides[5], Targets[1]],
+        [Sides[6], Targets[1]],
+        [Sides[7], Targets[2]],
+    ]
+
+    ####################
+    ### Combinations ###
+    ####################
+
+    '''
+    1.
+    cornerShifts_Closer
+    sideShifts_1stClosest
+
+    2.
+    cornerShifts_Closer
+    sideShifts_2ndClosest
+
+    3.
+    cornerShifts_Closer
+    sideShifts_3rdClosest
+
+    4.
+    cornerShifts_Closer
+    sideShifts_4thClosest
+
+    5.
+    cornerShifts_Farther
+    sideShifts_1stClosest
+
+    6.
+    cornerShifts_Farther
+    sideShifts_2ndClosest
+
+    7.
+    cornerShifts_Farther
+    sideShifts_3rdClosest
+
+    8.
+    cornerShifts_Farther
+    sideShifts_4thClosest
+    '''
+
+    # # Run the function
+    # move_nurbs_control_point(old=(2, 1, 1), new=(3, 3, 3), epsilon=0)
+
+main()
