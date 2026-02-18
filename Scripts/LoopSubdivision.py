@@ -153,13 +153,14 @@ def loop_subdivision(obj, iterations=1):
         me.update()
 
 # --- Execution ---
-active_obj = bpy.context.active_object
+if __name__ == "__main__":
+    active_obj = bpy.context.active_object
 
-ITERATIONS=3
+    ITERATIONS=3
 
-if active_obj and active_obj.type == 'MESH':
-    print(f"Applying Loop Subdivision to {active_obj.name}...")
-    loop_subdivision(active_obj, ITERATIONS)
-    print("Done.")
-else:
-    print("Please select a mesh object.")
+    if active_obj and active_obj.type == 'MESH':
+        print(f"Applying Loop Subdivision to {active_obj.name}...")
+        loop_subdivision(active_obj, ITERATIONS)
+        print("Done.")
+    else:
+        print("Please select a mesh object.")

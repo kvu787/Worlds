@@ -212,4 +212,5 @@ def main():
     # # Run the function
     # move_nurbs_control_point(old=(2, 1, 1), new=(3, 3, 3), epsilon=0)
 
-main()
+if __name__ == "__main__":
+    main()

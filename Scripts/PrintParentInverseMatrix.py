@@ -20,5 +20,6 @@ def print_parent_inverse(obj):
     else:
         print("Status: Offset applied (Object was parented 'In Place')")
 
-# Execute on the currently active object
-print_parent_inverse(bpy.context.active_object)
+if __name__ == "__main__":
+    # Execute on the currently active object
+    print_parent_inverse(bpy.context.active_object)
