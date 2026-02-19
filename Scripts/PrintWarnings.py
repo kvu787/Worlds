@@ -9,6 +9,9 @@ any modifier stack other than a single unapplied cc subd modifier
 Objects or collections that are hidden or unselectable
 Object hierarchies that are not in the same collection
 Negative scales
+Non-planar faces for non-smooth shaded meshes
+
+print any commonly used toggles that are non-default
 '''
 
 def main():
