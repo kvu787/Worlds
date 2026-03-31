@@ -1,4 +1,4 @@
-[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://72ttu2bkwh7q"]
+[gd_resource type="ShaderMaterial" format=3 uid="uid://72ttu2bkwh7q"]
 
 [ext_resource type="Shader" uid="uid://oxoa5pjjkt8p" path="res://Shaders/GrayScale.gdshader" id="1_bcoi1"]
 

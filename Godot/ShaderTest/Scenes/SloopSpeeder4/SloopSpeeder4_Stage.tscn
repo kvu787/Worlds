@@ -1,16 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://dxfbj03u7nq1i"]
+[gd_scene format=3 uid="uid://dxfbj03u7nq1i"]
 
 [ext_resource type="PackedScene" uid="uid://kbghsvnpvap1" path="res://Scenes/SloopSpeeder4/SloopSpeeder4.tscn" id="1_1jjlf"]
 [ext_resource type="Material" uid="uid://dbnc1u3ep2xle" path="res://Materials/SloopSpeeder4/Stage.tres" id="2_6opdk"]
 
-[node name="SloopSpeeder4Stage" type="Node3D"]
+[node name="SloopSpeeder4Stage" type="Node3D" unique_id=958160437]
 
-[node name="SloopSpeeder4" parent="." instance=ExtResource("1_1jjlf")]
+[node name="SloopSpeeder4" parent="." unique_id=279017009 instance=ExtResource("1_1jjlf")]
 
-[node name="_SloopSpeeder4" parent="SloopSpeeder4" index="0"]
+[node name="_SloopSpeeder4" parent="SloopSpeeder4" index="0" unique_id=1821004317]
 material_override = ExtResource("2_6opdk")
 
-[node name="Camera3D" type="Camera3D" parent="."]
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1829235767]
 transform = Transform3D(0.6039128, 0.490212, -0.6284756, -0.18438748, 0.8530371, 0.4881894, 0.77542937, -0.17894077, 0.605549, -3.85644, 3.0013452, 3.459942)
 projection = 1
 size = 3.856

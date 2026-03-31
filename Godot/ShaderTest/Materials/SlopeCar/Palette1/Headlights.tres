@@ -1,4 +1,4 @@
-[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://cad51reassoni"]
+[gd_resource type="ShaderMaterial" format=3 uid="uid://cad51reassoni"]
 
 [ext_resource type="Shader" uid="uid://b14gisdqxquoh" path="res://Shaders/K1.gdshader" id="1_j8se3"]
 

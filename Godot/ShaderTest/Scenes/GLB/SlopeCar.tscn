@@ -1,11 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://8g67m0etccf8"]
+[gd_scene format=3 uid="uid://8g67m0etccf8"]
 
 [ext_resource type="PackedScene" uid="uid://bnj1r25aoyvgi" path="res://GLB/SlopeCar.glb" id="1_7k1ho"]
 [ext_resource type="Material" uid="uid://dtk4ato0acapo" path="res://Materials/SlopeCar/Palette2/Default.tres" id="2_fqxtn"]
 
-[node name="SlopeCar" instance=ExtResource("1_7k1ho")]
+[node name="SlopeCar" unique_id=1973928207 instance=ExtResource("1_7k1ho")]
 
-[node name="_SlopeCar" parent="." index="0"]
+[node name="_SlopeCar" parent="." index="0" unique_id=1248069715]
 surface_material_override/0 = ExtResource("2_fqxtn")
 surface_material_override/1 = ExtResource("2_fqxtn")
 surface_material_override/2 = ExtResource("2_fqxtn")

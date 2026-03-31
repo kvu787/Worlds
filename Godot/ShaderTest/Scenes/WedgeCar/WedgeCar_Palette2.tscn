@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://oedtmkqo2aon"]
+[gd_scene format=3 uid="uid://oedtmkqo2aon"]
 
 [ext_resource type="PackedScene" uid="uid://cwnmnrowfvxkg" path="res://Scenes/GLB/WedgeCar.tscn" id="1_bjnh6"]
 [ext_resource type="Environment" uid="uid://boi81h7k6ctsk" path="res://Environment.tres" id="1_seyc1"]
@@ -9,29 +9,29 @@
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_g2150"]
 
-[node name="Root" type="Node3D"]
+[node name="Root" type="Node3D" unique_id=186181057]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=462456370]
 environment = ExtResource("1_seyc1")
 
-[node name="CameraPivot" type="Node3D" parent="."]
+[node name="CameraPivot" type="Node3D" parent="." unique_id=675718866]
 transform = Transform3D(1, 0, 0, 0, 0.8161376, 0.5778576, 0, -0.5778576, 0.8161376, 0, 0.8577118, 0)
 
-[node name="Camera3D" type="Camera3D" parent="CameraPivot"]
+[node name="Camera3D" type="Camera3D" parent="CameraPivot" unique_id=1536615329]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.5)
 projection = 1
 size = 4.5
 far = 100.0
 
-[node name="Background" type="MeshInstance3D" parent="."]
+[node name="Background" type="MeshInstance3D" parent="." unique_id=893608917]
 transform = Transform3D(9.792591, 0, 0, 0, 1, 0, 0, 0, 8.669277, 0, 0, 0)
 material_override = ExtResource("5_ik1r7")
 mesh = SubResource("PlaneMesh_g2150")
 
-[node name="WedgeCar" parent="." instance=ExtResource("1_bjnh6")]
+[node name="WedgeCar" parent="." unique_id=338528919 instance=ExtResource("1_bjnh6")]
 transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, 0, 0, 0)
 
-[node name="_WedgeCar" parent="WedgeCar" index="0"]
+[node name="_WedgeCar" parent="WedgeCar" index="0" unique_id=1046714631]
 surface_material_override/0 = ExtResource("2_7f5e1")
 surface_material_override/1 = ExtResource("3_ik1r7")
 surface_material_override/2 = ExtResource("4_dmuit")

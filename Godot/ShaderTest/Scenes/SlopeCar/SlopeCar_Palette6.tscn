@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://djr4tf5myaa0e"]
+[gd_scene format=3 uid="uid://djr4tf5myaa0e"]
 
 [ext_resource type="Environment" uid="uid://boi81h7k6ctsk" path="res://Environment.tres" id="1_j4cv6"]
 [ext_resource type="Material" uid="uid://dmwapnrg7kos2" path="res://Materials/SolidColors/Black.tres" id="2_uj3sq"]
@@ -10,28 +10,28 @@
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_ucvpw"]
 
-[node name="Root" type="Node3D"]
+[node name="Root" type="Node3D" unique_id=1508440050]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=362101903]
 environment = ExtResource("1_j4cv6")
 
-[node name="CameraPivot" type="Node3D" parent="."]
+[node name="CameraPivot" type="Node3D" parent="." unique_id=2128094711]
 transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, 0, 0.868, 0)
 
-[node name="Camera3D" type="Camera3D" parent="CameraPivot"]
+[node name="Camera3D" type="Camera3D" parent="CameraPivot" unique_id=502897901]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.5)
 projection = 1
 size = 4.5
 far = 100.0
 
-[node name="Background" type="MeshInstance3D" parent="."]
+[node name="Background" type="MeshInstance3D" parent="." unique_id=756051461]
 transform = Transform3D(12, 0, 0, 0, 1, 0, 0, 0, 9, 0, 0, 0)
 material_override = ExtResource("2_uj3sq")
 mesh = SubResource("PlaneMesh_ucvpw")
 
-[node name="SlopeCar" parent="." instance=ExtResource("3_nmcwj")]
+[node name="SlopeCar" parent="." unique_id=103646218 instance=ExtResource("3_nmcwj")]
 
-[node name="_SlopeCar" parent="SlopeCar" index="0"]
+[node name="_SlopeCar" parent="SlopeCar" index="0" unique_id=1248069715]
 transform = Transform3D(0.49999997, 0, 0.86602545, 0, 1, 0, -0.86602545, 0, 0.49999997, 0, 0, 0)
 surface_material_override/0 = ExtResource("4_6xw41")
 surface_material_override/1 = ExtResource("5_rd746")

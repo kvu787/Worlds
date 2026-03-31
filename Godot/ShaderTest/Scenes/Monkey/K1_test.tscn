@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cu87mla1vkmyx"]
+[gd_scene format=3 uid="uid://cu87mla1vkmyx"]
 
 [ext_resource type="Environment" uid="uid://boi81h7k6ctsk" path="res://Environment.tres" id="1_8a0qt"]
 [ext_resource type="PackedScene" uid="uid://dygrb3acjjtqy" path="res://Scenes/GLB/Monkey.tscn" id="1_sb437"]
@@ -14,81 +14,81 @@ rings = 64
 
 [sub_resource type="QuadMesh" id="QuadMesh_2seyi"]
 
-[node name="Root" type="Node3D"]
+[node name="Root" type="Node3D" unique_id=1605837437]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1611007490]
 environment = ExtResource("1_8a0qt")
 
-[node name="Set1" type="Node3D" parent="."]
+[node name="Set1" type="Node3D" parent="." unique_id=213924477]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
 
-[node name="Suzanne" parent="Set1" instance=ExtResource("1_sb437")]
+[node name="Suzanne" parent="Set1" unique_id=2018304720 instance=ExtResource("1_sb437")]
 transform = Transform3D(0.9156626, 0.1315245, 0.3798201, 0, 0.9449489, -0.3272179, -0.40194777, 0.2996212, 0.86525434, -4.5, 0, 0)
 
-[node name="_Suzanne" parent="Set1/Suzanne" index="0"]
+[node name="_Suzanne" parent="Set1/Suzanne" index="0" unique_id=1019502969]
 material_override = ExtResource("2_8a0qt")
 
-[node name="SuzanneSphere" type="MeshInstance3D" parent="Set1"]
+[node name="SuzanneSphere" type="MeshInstance3D" parent="Set1" unique_id=204834354]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1.5, 0, 0)
 material_override = ExtResource("2_8a0qt")
 mesh = SubResource("SphereMesh_rxg2q")
 skeleton = NodePath("../..")
 
-[node name="Cube" type="MeshInstance3D" parent="Set1"]
+[node name="Cube" type="MeshInstance3D" parent="Set1" unique_id=1776385801]
 transform = Transform3D(0.7071066, -0.7071065, 0, 0.40860695, 0.40860686, 0.81613743, -0.5770963, -0.57709616, 0.5778575, 1.5, 0, 0)
 material_override = ExtResource("3_3hbsr")
 mesh = SubResource("BoxMesh_glv2v")
 skeleton = NodePath("../..")
 
-[node name="CubeSphere" type="MeshInstance3D" parent="Set1"]
+[node name="CubeSphere" type="MeshInstance3D" parent="Set1" unique_id=468639822]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 4.5, 0, 0)
 material_override = ExtResource("3_3hbsr")
 mesh = SubResource("SphereMesh_rxg2q")
 skeleton = NodePath("../..")
 
-[node name="Set2" type="Node3D" parent="."]
+[node name="Set2" type="Node3D" parent="." unique_id=2126677479]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1, 0)
 
-[node name="Suzanne" parent="Set2" instance=ExtResource("1_sb437")]
+[node name="Suzanne" parent="Set2" unique_id=1836349872 instance=ExtResource("1_sb437")]
 transform = Transform3D(0.9156626, 0.1315245, 0.3798201, 0, 0.9449489, -0.3272179, -0.40194777, 0.2996212, 0.86525434, -4.5, 0, 0)
 
-[node name="_Suzanne" parent="Set2/Suzanne" index="0"]
+[node name="_Suzanne" parent="Set2/Suzanne" index="0" unique_id=1019502969]
 material_override = ExtResource("3_3hbsr")
 
-[node name="SuzanneSphere" type="MeshInstance3D" parent="Set2"]
+[node name="SuzanneSphere" type="MeshInstance3D" parent="Set2" unique_id=1455936755]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1.5, 0, 0)
 material_override = ExtResource("3_3hbsr")
 mesh = SubResource("SphereMesh_rxg2q")
 skeleton = NodePath("../..")
 
-[node name="Cube" type="MeshInstance3D" parent="Set2"]
+[node name="Cube" type="MeshInstance3D" parent="Set2" unique_id=1225766369]
 transform = Transform3D(0.7071066, -0.7071065, 0, 0.40860695, 0.40860686, 0.81613743, -0.5770963, -0.57709616, 0.5778575, 1.5, 0, 0)
 material_override = ExtResource("2_8a0qt")
 mesh = SubResource("BoxMesh_glv2v")
 skeleton = NodePath("../..")
 
-[node name="CubeSphere" type="MeshInstance3D" parent="Set2"]
+[node name="CubeSphere" type="MeshInstance3D" parent="Set2" unique_id=1005319462]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 4.5, 0, 0)
 material_override = ExtResource("2_8a0qt")
 mesh = SubResource("SphereMesh_rxg2q")
 skeleton = NodePath("../..")
 
-[node name="BluePlane" type="MeshInstance3D" parent="."]
+[node name="BluePlane" type="MeshInstance3D" parent="." unique_id=446119104]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.8478584, -1.2567161, 1)
 material_override = ExtResource("4_1jrnc")
 mesh = SubResource("QuadMesh_2seyi")
 
-[node name="BluePlane2" type="MeshInstance3D" parent="."]
+[node name="BluePlane2" type="MeshInstance3D" parent="." unique_id=226388990]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.919688, 1.269292, 1)
 material_override = ExtResource("4_1jrnc")
 mesh = SubResource("QuadMesh_2seyi")
 
-[node name="BluePlane3" type="MeshInstance3D" parent="."]
+[node name="BluePlane3" type="MeshInstance3D" parent="." unique_id=356592691]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.7039957, 1.2094339, 1)
 material_override = ExtResource("4_1jrnc")
 mesh = SubResource("QuadMesh_2seyi")
 
-[node name="BluePlane4" type="MeshInstance3D" parent="."]
+[node name="BluePlane4" type="MeshInstance3D" parent="." unique_id=174983557]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.680052, -1.1729147, 1)
 material_override = ExtResource("4_1jrnc")
 mesh = SubResource("QuadMesh_2seyi")

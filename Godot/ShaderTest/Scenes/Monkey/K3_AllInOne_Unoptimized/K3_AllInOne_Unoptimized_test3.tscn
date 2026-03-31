@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://tt2ut7f4iuox"]
+[gd_scene format=3 uid="uid://tt2ut7f4iuox"]
 
 [ext_resource type="Environment" uid="uid://boi81h7k6ctsk" path="res://Environment.tres" id="1_02deg"]
 [ext_resource type="Material" uid="uid://dmwapnrg7kos2" path="res://Materials/SolidColors/Black.tres" id="2_c2t1v"]
@@ -11,23 +11,23 @@
 radius = 1.0
 height = 2.0
 
-[node name="Root" type="Node3D"]
+[node name="Root" type="Node3D" unique_id=44472641]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1818906197]
 environment = ExtResource("1_02deg")
 
-[node name="Background" type="MeshInstance3D" parent="."]
+[node name="Background" type="MeshInstance3D" parent="." unique_id=1403353286]
 transform = Transform3D(47.01606, 0, 0, 0, 23.492712, 0, 0, 0, 0.98432964, 0, 0, -1.608429)
 material_override = ExtResource("2_c2t1v")
 mesh = SubResource("QuadMesh_wdqrb")
 
-[node name="Suzanne" parent="." instance=ExtResource("3_xk8pc")]
+[node name="Suzanne" parent="." unique_id=1206168 instance=ExtResource("3_xk8pc")]
 transform = Transform3D(0.8701593, 0.13199432, 0.4747634, 0.008519042, 0.95928395, -0.28231534, -0.49269688, 0.24970387, 0.8336053, -1.2908177, 0, 0)
 
-[node name="_Suzanne" parent="Suzanne" index="0"]
+[node name="_Suzanne" parent="Suzanne" index="0" unique_id=1019502969]
 material_override = ExtResource("4_xmo3a")
 
-[node name="Sphere" type="MeshInstance3D" parent="."]
+[node name="Sphere" type="MeshInstance3D" parent="." unique_id=2111025245]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 1.3870487, 0, 0)
 material_override = ExtResource("4_xmo3a")
 mesh = SubResource("SphereMesh_tk6y1")
