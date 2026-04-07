@@ -38,3 +38,5 @@ if __name__ == "__main__":
         if obj.type == 'MESH':
             obj.data.materials.clear()
             setup_object(obj)
+            # Hack to force Blender to update stuff immediately:
+            obj.location.x += 0.0
