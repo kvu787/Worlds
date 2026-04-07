@@ -1,7 +1,7 @@
 import bpy
-import inspect
 
-SRC_OBJECT_NAME = 'K10_MATERIAL_TEMPLATE_SPHERE'
+TEMPLATE_OBJECT_NAME = 'K10_Material_Template_Sphere'
+MATERIAL_NAME = 'K10_Material'
 
 PROPERTY_NAMES = [
     '1_BaseColor',
@@ -12,32 +12,29 @@ PROPERTY_NAMES = [
     '6_LightPoint',
 ]
 
-def inspect_stuff():
-    print(bpy.context.active_object)
-    print(type(bpy.context.active_object.keys()))
-    print(list(bpy.context.active_object.keys()))
-    print(type(bpy.context.active_object['1_BaseColor']))
-    print(list(bpy.context.active_object['1_BaseColor']))
-    print(dict(bpy.context.active_object))
-    print(bpy.context.active_object)
-    print(type(bpy.context.active_object.id_properties_ui('1_BaseColor')))
-    print(bpy.context.active_object.id_properties_ui('1_BaseColor').as_dict())
-    print(inspect.getmembers(bpy.context.active_object.id_properties_ui('1_BaseColor')))
-    print(dir(bpy.context.active_object.id_properties_ui('1_BaseColor')))
-    for x in dir(bpy.context.active_object):
-        print(x)
-    print(type(bpy.context.active_object.id_properties_ui('1_BaseColor')))
-    for x in dir(bpy.context.active_object.id_properties_ui('1_BaseColor')):
-        print(x)
-    print('=====')
-    print(bpy.context.active_object.id_properties_ui('1_BaseColor').as_dict())
+def setup_object(obj):
+    src = bpy.data.objects.get(TEMPLATE_OBJECT_NAME)
+    dst = obj
 
-if __name__ == "__main__":
-    print('======== BEGIN')
-    src = bpy.data.objects.get(SRC_OBJECT_NAME)
-    dst = bpy.context.active_object
-
+    # Setup custom properties
     for name in PROPERTY_NAMES:
         dst[name] = src[name]
         dst.id_properties_ui(name).update_from(src.id_properties_ui(name))
-    print('======== END')
+
+    # Setup material
+    dst.data.materials.append(bpy.data.materials[MATERIAL_NAME])
+
+if __name__ == "__main__":
+    if bpy.data.objects.get(TEMPLATE_OBJECT_NAME) is None:
+        raise RuntimeError(f'Template object with name "{TEMPLATE_OBJECT_NAME}" not found')
+    if MATERIAL_NAME not in bpy.data.materials.keys():
+        raise RuntimeError(f'Material with name "{MATERIAL_NAME}" not found')
+
+    template_object = bpy.data.objects.get(TEMPLATE_OBJECT_NAME)
+
+    for obj in bpy.context.selected_objects:
+        if obj == template_object:
+            continue
+        if obj.type == 'MESH':
+            obj.data.materials.clear()
+            setup_object(obj)
