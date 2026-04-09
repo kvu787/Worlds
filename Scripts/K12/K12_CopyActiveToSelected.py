@@ -1,7 +1,7 @@
 import bpy
 
-TEMPLATE_OBJECT_NAME = 'K10_Material_Template_Sphere'
-MATERIAL_NAME = 'K10_Material'
+TEMPLATE_OBJECT_NAME = 'K12_Material_Template_Sphere'
+MATERIAL_NAME = 'K12_Material'
 
 PROPERTY_NAMES = [
     '1_BaseColor',
