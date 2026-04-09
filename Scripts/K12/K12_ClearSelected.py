@@ -23,19 +23,13 @@ def ValidateTemplate():
 if __name__ == '__main__':
     templateObject = ValidateTemplate()
 
-    src = bpy.context.active_object
-
-    for dst in bpy.context.selected_objects:
-        if dst == templateObject or dst == src:
+    for obj in bpy.context.selected_objects:
+        if obj == templateObject:
             continue
-        if dst.type == 'MESH':
-            dst.data.materials.clear()
+        if obj.type == 'MESH':
+            obj.data.materials.clear()
             for propertyName in PROPERTY_NAMES:
-                if propertyName in dst.keys():
-                    del dst[propertyName]
-            for propertyName in PROPERTY_NAMES:
-                dst[propertyName] = src[propertyName]
-                dst.id_properties_ui(propertyName).update_from(src.id_properties_ui(propertyName))
-            dst.data.materials.append(bpy.data.materials[MATERIAL_NAME])
+                if propertyName in obj.keys():
+                    del obj[propertyName]
             # Hack to force Blender to update stuff immediately:
-            dst.location.x += 0.0
+            obj.location.x += 0.0

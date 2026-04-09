@@ -12,31 +12,30 @@ PROPERTY_NAMES = [
     '6_LightPoint',
 ]
 
-def setup_object(obj):
-    src = bpy.data.objects.get(TEMPLATE_OBJECT_NAME)
-    dst = obj
-
-    # Setup custom properties
-    for name in PROPERTY_NAMES:
-        dst[name] = src[name]
-        dst.id_properties_ui(name).update_from(src.id_properties_ui(name))
-
-    # Setup material
-    dst.data.materials.append(bpy.data.materials[MATERIAL_NAME])
-
-if __name__ == "__main__":
-    if bpy.data.objects.get(TEMPLATE_OBJECT_NAME) is None:
+def ValidateTemplate():
+    templateObject = bpy.data.objects.get(TEMPLATE_OBJECT_NAME)
+    if templateObject is None:
         raise RuntimeError(f'Template object with name "{TEMPLATE_OBJECT_NAME}" not found')
     if MATERIAL_NAME not in bpy.data.materials.keys():
         raise RuntimeError(f'Material with name "{MATERIAL_NAME}" not found')
+    return templateObject
 
-    template_object = bpy.data.objects.get(TEMPLATE_OBJECT_NAME)
+if __name__ == '__main__':
+    templateObject = ValidateTemplate()
 
-    for obj in bpy.context.selected_objects:
-        if obj == template_object:
+    src = templateObject
+
+    for dst in bpy.context.selected_objects:
+        if dst == templateObject or dst == src:
             continue
-        if obj.type == 'MESH':
-            obj.data.materials.clear()
-            setup_object(obj)
+        if dst.type == 'MESH':
+            dst.data.materials.clear()
+            for propertyName in PROPERTY_NAMES:
+                if propertyName in dst.keys():
+                    del dst[propertyName]
+            for propertyName in PROPERTY_NAMES:
+                dst[propertyName] = src[propertyName]
+                dst.id_properties_ui(propertyName).update_from(src.id_properties_ui(propertyName))
+            dst.data.materials.append(bpy.data.materials[MATERIAL_NAME])
             # Hack to force Blender to update stuff immediately:
-            obj.location.x += 0.0
+            dst.location.x += 0.0
