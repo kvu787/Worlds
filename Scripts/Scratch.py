@@ -48,3 +48,24 @@ def validate_object(obj):
     for name in PROPERTY_NAMES:
         if name not in obj.keys():
             raise RuntimeError('Object has incorrect custom property names')
+
+import bpy
+
+print('----------------------')
+material_name = "Headlights"
+material = bpy.data.materials.get(material_name)
+#print(material)
+#print(material.use_nodes)
+#print(material.node_tree.nodes)
+#print(material.node_tree.nodes.get("K12_Shader"))
+#print(type(material.node_tree.nodes))
+#for e in list(material.node_tree.nodes):
+#    print(e)
+#print(material.node_tree.nodes.keys())
+#print(material.node_tree.nodes.values())
+for e in material.node_tree.nodes['K12_Shader'].inputs:
+    print(f'name = {e.name}')
+    print(f'label = {e.label}')
+    print(f'identifier = {e.identifier}')
+    print(f'default_value = {e.default_value}')
+    print()
