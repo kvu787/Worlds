@@ -69,3 +69,50 @@ for e in material.node_tree.nodes['K12_Shader'].inputs:
     print(f'identifier = {e.identifier}')
     print(f'default_value = {e.default_value}')
     print()
+
+###########################################################################
+# print any objects that share a data
+import bpy
+from collections import defaultdict
+
+# Group objects by the datablock they use
+groups = defaultdict(list)
+
+for obj in bpy.data.objects:
+    if obj.data is not None:
+        groups[obj.data].append(obj)
+
+# Print only objects that share the same data
+print(len(groups))
+for data_block, objects in groups.items():
+    if len(objects) > 1:
+        print(f"Shared data: {data_block.name} ({type(data_block).__name__})")
+        for obj in objects:
+            print(f"  - {obj.name}")
+        print()
+
+#########################################################################
+import bpy
+
+PROPERTY_NAMES = [
+    '1_BaseColor',
+    '2_Brightness',
+    '3_Shift',
+    '4_Rotation',
+    '5_DarkPoint',
+    '6_LightPoint',
+]
+
+if __name__ == '__main__':
+    for obj in bpy.context.scene.objects:
+        if not (obj.type == 'MESH' or obj.type == 'CURVE' or obj.type == 'SURFACE'):
+            continue
+        if len(obj.material_slots) == 0:
+            print(obj.name)
+#        print(list(obj.material_slots))
+        # for material_slot in obj.material_slots:
+        #     for node in material_slot.material.node_tree.nodes:
+        #         print(node.label)
+        #         print(node.name)
+        #         print(node.identifier)
+
