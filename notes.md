@@ -1,3 +1,32 @@
+provide feedback on this game control scheme:
+
+- Minimum play-only setup:
+  - 60% or larger keyboard
+  - Laptop trackpad or 2 button mouse
+- Ideal play and create setup:
+  - Full-size keyboard
+  - 5 button mouse with scroll wheel
+- 3/4 overhead camera perspective
+- ` (or \ if using 60% keyboard) for developer console
+- WASD to move character or pan camera
+- Shift, Ctrl, Space for movement skills
+- 1, 2, 3, 4 to switch weapons
+- Tab for in-game menu
+- Esc for system menu
+- Mouse to move cursor
+- Alt + LMB + move mouse = Zoom camera
+- Alt + RMB + move mouse = Rotate camera
+- Click LMB on an enemy to try to attack it
+- Supports ESDF alternative to WASD layout
+- Left side of keyboard with:
+  - 12345 = Switch weapon
+  - wasd = Move character
+  - SPACE, CTRL, ALT, SHIFT = Movement abilities
+  - ESC = System menu
+  - TAB = Game menu
+
+-----
+
 i would like to make a g2 fuselage surface where one end is a smooth tip and the other end is open in a way to separately model and attach other parts of the full fuselage.
 
 I would like flexibility in the shape of the fuselage. i.e. it shouldn't just be a perfect circle or ellipse. it could be something like a rounded triangle with "spokes" of varying lengths.
