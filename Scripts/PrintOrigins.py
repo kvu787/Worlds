@@ -8,8 +8,6 @@ if __name__ == "__main__":
         for obj in objects:
             print(f"Name: {obj.name}")
             print(f"Origin: X={repr(obj.location.x)}, Y={repr(obj.location.y)}, Z={repr(obj.location.z)}")
-            for vertex in obj.data.vertices:
-                print(f"Vertex {vertex.index}: X={repr(vertex.co.x)}, Y={repr(vertex.co.y)}, Z={repr(vertex.co.z)}")
     else:
         print("No mesh objects found in selection")
     print('END -------------------------------------')
