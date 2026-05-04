@@ -1,16 +1,13 @@
 import bpy
 
 ValidZHeights = [
-    0.0,
-    0.00390625,
-    0.0078125,
-    0.01171875,
+    0,
     0.015625,
-    0.01953125,
-    0.0234375,
-    0.02734375,
     0.03125,
-    0.03515625,
+    0.046875,
+    0.0625,
+    0.078125,
+    0.09375,
 ]
 
 if __name__ == "__main__":
@@ -28,6 +25,7 @@ if __name__ == "__main__":
                     print(f"Name: {obj.name}")
                     print("Vertex ERROR")
                     print(f"Vertex {vertex.index}: x={repr(vertex.co.x)}, y={repr(vertex.co.y)}, z={repr(vertex.co.z)}")
+        print(f"{len(objects)} objects checked")
     else:
         print("No mesh objects found in selection")
     print("END -------------------------------------")
